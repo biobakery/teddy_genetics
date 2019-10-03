@@ -1,16 +1,19 @@
+### To import Anadama2 (for python2)
+import sys
+sys.path.insert (1, '/n/huttenhower_lab/data/teddy_genetics/mondher_analysis/py3venev/lib_py2')
+
 """
-This script is written to run the Teddy analysis as an Anadama2 workflow
+This script is written to run the Teddy2 analysis as an Anadama2 workflow
 """
 
 import anadama2
 from anadama2 import Workflow
 
 ### Initializing a workflow instance with Anadama2
-workflow = Workflow(version="0.0.2", description="A workflow to run for the Teddy2 project", remove_options=["input","output"])
+workflow = Workflow(version="0.0.1", description="A workflow to run for the Teddy2 project", remove_options=["input","output"])
 
 
 #### Steps of the workflow to be run using Anadama2
-
 #___________________________________________________
 ### Step 1 : preprocessing of the metagenomics data.
 #---------------------------------------------------
@@ -20,8 +23,6 @@ workflow = Workflow(version="0.0.2", description="A workflow to run for the Tedd
 ## Command to run : ./prep_species.py all_phlan.tsv Day
 ## 
 ## The output is : major_species.tsv, major_species_log10.tsv, mp201_sample_mapping.tsv
-
-
 
 
 # Add custom arguments and parse arguments (Optional)
@@ -41,7 +42,32 @@ workflow = Workflow(version="0.0.2", description="A workflow to run for the Tedd
 ### Section #4: Add tasks (Required)
 
 
-workflow.add_task("prep_species.py [depends[0] depends[1]]", depends=["all_phlan.tsv", "Day"], targets=[])
+#workflow.add_task("./prep_species.py all_phlan.tsv Day")
+
+workflow.add_task("./prep_species.py [depends[0]] Day", depends=["all_phlan.tsv"])
+
+
+
+# 1- Keep major species 
+workflow.add_task("./prep_species.py all_phlan.tsv Day")
+# -----<> Outputs : 
+
+
+
+# 2- Calculating bray Curtis distance
+workflow.add_task ('./prep_bc_trends.py species.tsv init')
+## ???? What is the difference between the init and the prev ??
+# ----<> Outputs : bc_dists_init.details.tsv | bc_dists_init.tsv
+
+
+
+# 3- Compute Species acquisition dates
+workflow.add_task ('./prep_acquisitions.py species.ts')
+# ----<> Outputs : acquisitions.tsv
+
+
+
+
 
 
 
