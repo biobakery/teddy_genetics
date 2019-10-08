@@ -60,7 +60,9 @@ workflow.add_task ('./clean_plink.py -i [depends[0]] -o [targets[0]]', depends=[
 #
 
 workflow.add_task ('source /n/huttenhower_lab/data/teddy_genetics/mondher_analysis/py3venev/env/bin/activate')
-workflow.add_task ('./model_rpy2.py [depends[0]] [depends[1]] [targets[0]]', depends=['species.tsv', 'genetics_pca.tsv'], targets=['results'])
+
+
+workflow.add_task (' source /n/huttenhower_lab/data/teddy_genetics/mondher_analysis/py3venev/env/bin/activate | ./model_rpy2.py [depends[0]] [depends[1]] [targets[0]]', depends=['species.tsv', 'genetics_pca.tsv'], targets=['results'])
 
 #workflow.add_task ('deactivate')
 
