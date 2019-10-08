@@ -1,3 +1,5 @@
+#!/usr/bin/python2
+
 ### To import Anadama2 (for python2)
 import sys
 sys.path.insert (1, '/n/huttenhower_lab/data/teddy_genetics/mondher_analysis/py3venev/lib_py2')
@@ -42,6 +44,7 @@ workflow.add_task ('./prep_acquisitions.py [depends[0]]', depends = ['species.ts
 workflow.add_task ('./drop_rows.py -i [depends[0]] -rm Subject Day -o [targets[0]]', depends = ['species.tsv'], targets = ['species_no_meta.tsv'])
 workflow.add_task ('./diversity.R -i [depends[0]] -o [targets[0]]', depends = ['species_no_meta.tsv'], targets = ['Diversity_indices.tsv'] )
 # ----<> Outputs : Diversity_indices.tsv (species_no_meta.tsv will be removed)
+
 #___________________________________________________
 ### Step 2 : preprocessing of the genetics data    .
 #---------------------------------------------------
@@ -59,18 +62,18 @@ workflow.add_task ('./clean_plink.py -i [depends[0]] -o [targets[0]]', depends=[
 #---------------------------------------------------
 #
 
-workflow.add_task ('source /n/huttenhower_lab/data/teddy_genetics/mondher_analysis/py3venev/env/bin/activate')
+## Workflow withourt grid computing
+#workflow.add_task ('./model_rpy2.py [depends[0]] [depends[1]] [targets[0]]', depends=['species.tsv', 'genetics_pca.tsv'], targets=['results'])
+
+workflow.add_task_gridable ('./model_rpy2.py [depends[0]] [depends[1]] [targets[0]]', depends=['species.tsv', 'genetics_pca.tsv'], targets=['results'], mem = 160000, cores = 1, time = 120)
 
 
-workflow.add_task (' source /n/huttenhower_lab/data/teddy_genetics/mondher_analysis/py3venev/env/bin/activate | ./model_rpy2.py [depends[0]] [depends[1]] [targets[0]]', depends=['species.tsv', 'genetics_pca.tsv'], targets=['results'])
-
-#workflow.add_task ('deactivate')
-
-#workflow.add_task_gridable ('./model_rpy2.py [depends[0]] [depends[1]] [targets[0]]', depends=['species.tsv', 'genetics_pca.tsv'], targets=['results'], mem = 160000, cores = 1, time = 120)
 #___________________________________________________
 ### Step 4 : Result representation                 .
 #---------------------------------------------------
 #
+
+
 
 ### Section #5: Run tasks (Required)
 workflow.go()
