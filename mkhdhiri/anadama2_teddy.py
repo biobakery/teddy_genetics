@@ -11,8 +11,6 @@ import anadama2
 from anadama2 import Workflow
 
 ### Initializing a workflow instance with Anadama2
-#workflow = Workflow(version="0.0.1", description="A workflow to run for the Teddy2 project", remove_options=["input","output"])
-
 workflow = Workflow(version="0.0.1", description="A workflow to run for the Teddy2 project")
 
 #### Steps of the workflow to be run using Anadama2
@@ -28,7 +26,6 @@ workflow = Workflow(version="0.0.1", description="A workflow to run for the Tedd
 # 1- Keep major species 
 workflow.add_task( "./prep_species.py [depends[0]] Day", depends=["all_phlan.tsv"], targets= ['species.tsv'])
 #workflow.do("./prep_species.py all_phlan.tsv Day")
-
 # -----<> Outputs : major_species.tsv | major_species_log10.tsv | species.tsv
 ##
 
@@ -56,7 +53,6 @@ workflow.add_task ('plink --file snps --pca header tabs var-wts', depends = ['sn
 ### Clean The raw plink output
 workflow.add_task ('./clean_plink.py -i [depends[0]] -o [targets[0]]', depends=['plink.eigenvec'], targets=['genetics_pca.tsv'])
 
-
 #___________________________________________________
 ### Step 3 : Modeling                              .
 #---------------------------------------------------
@@ -65,7 +61,12 @@ workflow.add_task ('./clean_plink.py -i [depends[0]] -o [targets[0]]', depends=[
 ## Workflow withourt grid computing
 #workflow.add_task ('./model_rpy2.py [depends[0]] [depends[1]] [targets[0]]', depends=['species.tsv', 'genetics_pca.tsv'], targets=['results'])
 
-workflow.add_task_gridable ('./model_rpy2.py [depends[0]] [depends[1]] [targets[0]]', depends=['species.tsv', 'genetics_pca.tsv'], targets=['results'], mem = 160000, cores = 1, time = 120)
+#workflow.add_task_gridable ('./model_rpy2.py [depends[0]] [depends[1]] [targets[0]]', depends=['species.tsv', 'genetics_pca.tsv'], targets=['results'], mem = 160000, cores = 1, time = 120)
+
+workflow.add_grid_task ('./model_rpy2.py [depends[0]] [depends[1]] [targets[0]]', depends=['species.tsv', 'genetics_pca.tsv'], targets=['results'], mem = 160000, cores = 1, time = 120)
+
+
+
 
 
 #___________________________________________________
@@ -77,11 +78,6 @@ workflow.add_task_gridable ('./model_rpy2.py [depends[0]] [depends[1]] [targets[
 
 ### Section #5: Run tasks (Required)
 workflow.go()
-
-
-
-
-
 
 
 
