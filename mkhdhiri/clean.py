@@ -11,18 +11,40 @@ import pandas as pd
 import statistics
 import plotly.express as px
 from functools import reduce
+import argparse 
+
+
+###############################################
+## Parsing arguments
+
+parser = argparse.ArgumentParser (description = 'Parse Arguments')
+
+parser.add_argument ( '-diab', '--diabetes_file', help = 'The file with case-control information', required = True, dest = 'args_diab')
+parser.add_argument ('-subsam', '--subject_sample', help = 'The file for the subject--sample links', required = True, dest = 'args_subject_sample')
+parser.add_argument ( '-d', '--diversity', help = 'The diversity file', required = True, dest = 'args_d')
+parser.add_argument ( '-g', '--genetics', help = 'The file that have the PCs loads for the genetics data', required = True, dest = 'args_g')
+parser.add_argument ( '-m', '--metadata', help = 'The metadata file', required = True, dest = 'args_m')
+
+args = parser.parse_args()
 
 ################################################
 def read_data (data_file):
 	x = pd.read_csv (data_file, sep = '\t')
 	return (x)
 ################################################
+
 # read the needed data
-diab = read_data ('cleaned_mp201_t1d3_case_control.tsv')
-subject_sample = read_data ('metadata_sample-subject-day.tsv')
-diversity = read_data ('Diversity_indices.tsv')
-genetics = read_data ('genetics_pca.tsv')
-metadata = read_data ('clean_mp201_child_medications.tsv')
+#diab = read_data ('cleaned_mp201_t1d3_case_control.tsv')
+diab = read_data (args_diab)
+#subject_sample = read_data ('metadata_sample-subject-day.tsv')
+subject_sample = read_data (args_subject_sample)
+#diversity = read_data ('Diversity_indices.tsv')
+diversity = read_data (args_d)
+#genetics = read_data ('genetics_pca.tsv')
+genetics = read_data (args_g)
+#metadata = read_data ('clean_mp201_child_medications.tsv')
+metadata = read_csv (args_m)
+
 
 # Cleaning the diversity matrix
 diversity['Sample_ID'] = diversity['Sample_ID'].map(lambda x: x.lstrip('X'))
@@ -66,22 +88,15 @@ fig.write_image('Fig1.png')
 gen = [gen['IID'], gen['PC1']]
  
 
-
-
-
 db = diab[['Mask_Id', 'Outcome']]
 med = metadata[['Mask_Id', 'Medname']]
 diab_med = db.merge (med, how = 'left', left_on = 'Mask_Id', right_on = 'Mask_Id')
 
 diab_med_gen = diab_med.merge (gen, how= 'left', left_on = 'Mask_Id', right_index = True)
 
-
-
 gen = genetics[['IID','PC1']]
 
-
 daf.set_index('Attribute',inplace=True)
-
 
 data_frame = data_frame.T
 ### Merge all necessary data for the model into one dataframe
@@ -89,13 +104,6 @@ data_frame = data_frame.T
 #- Data that I need to merge: SubjectID->diab->Diversity->genetics_PCA->metadata
 
 df_all = [data_frame, diab, genetics, metadata]
-
-
-
-
-
-
-
 
 
 
