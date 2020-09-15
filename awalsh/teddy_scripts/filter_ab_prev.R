@@ -1,0 +1,120 @@
+#!/usr/bin/env Rscript
+
+require(docopt)
+'Usage:
+   filter_ab_prev.R [-i <input> -f <type> -a <abundance> -p <prevalence> -t <trans> -o <output>]
+
+Options:
+   -i input from MetaPhlAn2/HUMAnN2 (features as rows, samples as columns)
+   -f type of feature (EC, Pfam, Species)
+   -a abundance [default: 0]
+   -p prevalence [default: 0.1]
+   -t transformation (abs, log, log10, sqrt) [default: log]
+   -o output
+
+' -> doc 
+
+opts <- docopt(doc)
+
+#
+
+library(dplyr)
+library(reshape2)
+
+MicroFeat <- read.csv(opts$i, sep="\t", header=T, row.names=1, check.names=F) %>%
+	t() %>%
+	as.data.frame() %>%
+	tibble::rownames_to_column("MicroFeat")
+
+ab <- as.numeric(opts$a)
+
+prev <- as.numeric(opts$p)
+
+N <- prev * ncol(MicroFeat)
+
+# list the features that meet the criteria
+
+if(grepl("Species", opts$f) == TRUE){
+
+MicroFeat_list <- MicroFeat %>%
+	filter(grepl("\\|s__", MicroFeat) & !grepl("\\|t__", MicroFeat)) %>%
+	mutate(MicroFeat = gsub(".*\\|", "", MicroFeat)) %>%
+	melt() %>%
+	filter(value > ab) %>%
+	group_by(MicroFeat) %>%
+	tally() %>%
+	ungroup() %>%
+	filter(n > N) %>%
+	select(MicroFeat) %>%
+	as.data.frame()
+
+} else {
+
+MicroFeat_list <- MicroFeat %>%
+	melt() %>%
+	filter(value > ab) %>%
+	group_by(MicroFeat) %>%
+	tally() %>%
+	ungroup() %>%
+	filter(n > N) %>%
+	filter(!grepl("UN", MicroFeat))  %>%
+	select(MicroFeat) %>%
+	as.data.frame()
+}
+
+# remove features that do not meet the criteria
+
+head(MicroFeat_list)
+
+if(grepl("Species", opts$f) == TRUE){
+
+MicroFeat_df <- merge(MicroFeat_list, MicroFeat, by="MicroFeat") %>%
+	filter(grepl("\\|s__", MicroFeat) & !grepl("\\|t__", MicroFeat)) %>%
+	mutate(MicroFeat = gsub(".*\\|", "", MicroFeat)) %>%
+	tibble::column_to_rownames("MicroFeat") %>%
+	t(.) %>%
+	as.data.frame() %>%
+	tibble::rownames_to_column("sample_id")
+
+} else {
+	
+MicroFeat_df <- merge(MicroFeat_list, MicroFeat, by="MicroFeat") %>%
+	mutate(MicroFeat = paste0(opts$f, ".", MicroFeat)) %>%
+	tibble::column_to_rownames("MicroFeat") %>%
+	t(.) %>%
+	as.data.frame() %>%
+	tibble::rownames_to_column("sample_id")
+}
+
+# calculate eps (the smallest non-zero value)
+
+MicroFeat_melt <-  MicroFeat_df %>%
+	mutate(sample_id = factor(sample_id)) %>%
+	melt() %>%
+	dplyr::filter(value > 0)
+
+eps <- min(MicroFeat_melt$value)
+
+# transformation method
+
+tran_meth <- opts$t
+
+tran_func <- function(x) {
+	sapply(x, function(x){
+		eval(parse(text=paste0(tran_meth, "(", x, ")")))
+})}
+
+# transform the data
+
+MicroTrans <- MicroFeat_df %>%
+	mutate(sample_id = factor(sample_id)) %>%
+	melt() %>%
+	mutate(value = value + eps) %>%
+	mutate(value = tran_func(value)) %>%
+	dcast(sample_id ~ variable, value.var="value") %>%
+	setNames(paste0('microbiome:', names(.))) %>%
+	rename(sample_id=1)
+
+write.table(MicroTrans, opts$o, sep="\t", row.names=F, quote=F)
+	
+#
