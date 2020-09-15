@@ -85,6 +85,21 @@ Usage:
         -n size of chunks
         -t threads
 
+---------------------------------------------------------
+ merge microbiome feature + genetics features + metadata 
+---------------------------------------------------------
+
+format_input.R
+
+Usage:
+   format_input.R [-m <microbiome> -g <genetics> -d <metadata> -o <output>]
+
+Options:
+   -m microbiome features
+   -g genetic features
+   -d metadata
+   -o output
+
 ---------------------------------------
  generate shell scripts for each chunk 
 ---------------------------------------
@@ -100,21 +115,6 @@ optional arguments:
   -c CPUS       number of cpus
   -m OPTIMISER  optimiser for lmer
   -t TIME       runtime on cluster
-
----------------------------------------------------------
- merge microbiome feature + genetics features + metadata 
----------------------------------------------------------
-
-format_input.R
-
-Usage:
-   format_input.R [-m <microbiome> -g <genetics> -d <metadata> -o <output>]
-
-Options:
-   -m microbiome features
-   -g genetic features
-   -d metadata
-   -o output
 
 ------------
  run models 
