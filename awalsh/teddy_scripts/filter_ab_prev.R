@@ -2,7 +2,7 @@
 
 require(docopt)
 'Usage:
-   filter_ab_prev.R [-i <input> -f <type> -a <abundance> -p <prevalence> -t <trans> -o <output>]
+   filter_ab_prev.R [-i <microbiome> -f <feature> -a <abundance> -p <prevalence> -t <transformation>]
 
 Options:
    -i input from MetaPhlAn2/HUMAnN2 (features as rows, samples as columns)
@@ -10,7 +10,6 @@ Options:
    -a abundance [default: 0]
    -p prevalence [default: 0.1]
    -t transformation (abs, log, log10, sqrt) [default: log]
-   -o output
 
 ' -> doc 
 
@@ -21,16 +20,12 @@ opts <- docopt(doc)
 library(dplyr)
 library(reshape2)
 
-MicroFeat <- read.csv(opts$i, sep="\t", header=T, row.names=1, check.names=F) %>%
-	t() %>%
-	as.data.frame() %>%
-	tibble::rownames_to_column("MicroFeat")
+MicroFeat <- read.csv(opts$i, sep="\t", header=T, check.names=F) %>%
+	rename(MicroFeat=1)
 
 ab <- as.numeric(opts$a)
-
 prev <- as.numeric(opts$p)
-
-N <- prev * ncol(MicroFeat)
+N <- prev * ncol(MicroFeat[-1])
 
 # list the features that meet the criteria
 
@@ -64,32 +59,23 @@ MicroFeat_list <- MicroFeat %>%
 
 # remove features that do not meet the criteria
 
-head(MicroFeat_list)
-
 if(grepl("Species", opts$f) == TRUE){
 
-MicroFeat_df <- merge(MicroFeat_list, MicroFeat, by="MicroFeat") %>%
+MicroFeat_df <- MicroFeat %>%
 	filter(grepl("\\|s__", MicroFeat) & !grepl("\\|t__", MicroFeat)) %>%
 	mutate(MicroFeat = gsub(".*\\|", "", MicroFeat)) %>%
-	tibble::column_to_rownames("MicroFeat") %>%
-	t(.) %>%
-	as.data.frame() %>%
-	tibble::rownames_to_column("sample_id")
+	merge(., MicroFeat_list, by="MicroFeat") 
 
 } else {
 	
 MicroFeat_df <- merge(MicroFeat_list, MicroFeat, by="MicroFeat") %>%
-	mutate(MicroFeat = paste0(opts$f, ".", MicroFeat)) %>%
-	tibble::column_to_rownames("MicroFeat") %>%
-	t(.) %>%
-	as.data.frame() %>%
-	tibble::rownames_to_column("sample_id")
+	mutate(MicroFeat = paste0(opts$f, ".", MicroFeat))
+
 }
 
 # calculate eps (the smallest non-zero value)
 
 MicroFeat_melt <-  MicroFeat_df %>%
-	mutate(sample_id = factor(sample_id)) %>%
 	melt() %>%
 	dplyr::filter(value > 0)
 
@@ -107,14 +93,14 @@ tran_func <- function(x) {
 # transform the data
 
 MicroTrans <- MicroFeat_df %>%
-	mutate(sample_id = factor(sample_id)) %>%
 	melt() %>%
 	mutate(value = value + eps) %>%
 	mutate(value = tran_func(value)) %>%
-	dcast(sample_id ~ variable, value.var="value") %>%
-	setNames(paste0('microbiome:', names(.))) %>%
+	dcast(variable ~ MicroFeat, value.var="value") %>%
 	rename(sample_id=1)
 
-write.table(MicroTrans, opts$o, sep="\t", row.names=F, quote=F)
+prefix <- stringr::str_remove(opts$i, ".tsv")
+
+write.table(MicroTrans, paste0(prefix, ".major.tsv"), sep="\t", quote=F, row.names=F)
 	
 #

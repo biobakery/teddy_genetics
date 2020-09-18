@@ -47,7 +47,7 @@ shift $((OPTIND -1))
 
 cat "${i}" | parallel --header : --pipe -N"${n}" 'cat > batch_{#}.txt'
 
-ls batch_*.txt | awk '{print "Rscript transpose.R -i "$0" -o BATCH_"$0""}' > run_transpose.sh
+ls batch_*.txt | awk '{print "transpose.R -i "$0" -o BATCH_"$0""}' > run_transpose.sh
 
 cat run_transpose.sh | parallel -j "${t}"
 
