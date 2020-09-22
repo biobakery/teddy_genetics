@@ -31,6 +31,12 @@ The wrapper will output the following:
 - annotations + coordinates of SNPs
 - haplotypes
 
+----------------
+ PLINK workflow
+----------------
+
+Alternatively, the script anadama2_plink.py is a workflow that will run the PLINK pipeline (in progress as of 22/09/2020)
+
 ###########################
 # Code for running models #
 ###########################
