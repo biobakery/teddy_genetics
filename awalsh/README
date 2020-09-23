@@ -35,7 +35,8 @@ The wrapper will output the following:
  PLINK workflow
 ----------------
 
-Alternatively, the script anadama2_plink.py is a workflow that will run the PLINK pipeline (in progress as of 22/09/2020)
+Alternatively, the script anadama2_plink.py is a workflow that will run the PLINK pipeline (in progress as of 23/09/2020)
+anadama2_plink.py works as far as plink_plots.R, at least
 
 ###########################
 # Code for running models #
