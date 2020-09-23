@@ -41,14 +41,15 @@ depends_2 = "temp_1.bed"
 targets_2 = ["temp_autoQC_snptoberemoved.txt", "temp_autoQC_sampletoberemoved.txt", "temp_autoQC_Summary.txt"]
 
 workflow.add_task(
-	"king -b [depends[0]] --autoQC --prefix [targets[0]]",
-	depends=depends_2,
-	targets=targets_2
+	"king -b [depends[0]] --autoQC --prefix [prefix]",
+	depends="temp_1.bed",
+	targets=targets_2,
+	prefix="temp"
 	)
 
 # 3 - remove SNPs that failed KING autoQC
 
-depends_3 = ["temp_1.bed", "temp_1.bim", "temp_1.fam"]
+depends_3 = ["temp_1.bed", "temp_1.bim", "temp_1.fam", "temp_autoQC_snptoberemoved.txt"]
 
 targets_3 = ["temp_2.bed", "temp_2.bim", "temp_2.fam"]
 
@@ -63,7 +64,7 @@ workflow.add_task(
 
 # 4 - remove samples that failed KING autoQC
 
-depends_4 = ["temp_2.bed", "temp_2.bim", "temp_2.fam"]
+depends_4 = ["temp_2.bed", "temp_2.bim", "temp_2.fam", "temp_autoQC_sampletoberemoved.txt"]
 
 targets_4 = ["temp_3.bed", "temp_3.bim", "temp_3.fam"]
 
@@ -93,7 +94,7 @@ workflow.add_task(
 
 # 7 - caclulate MAF
 
-depends_7 = ["temp_3.bed", "temp_3.bim", "temp_3.fam"]
+depends_7 = ["temp_3.bed", "temp_3.bim", "temp_3.fam", args.prefix + "_king_autoQC_Summary.txt", args.prefix + "_king_autoQC_Breakdown.txt"]
 
 targets_7 = [args.prefix + ".frq"]
 
@@ -107,7 +108,7 @@ workflow.add_task(
 
 # 8 - remove SNPs with MAF < args.maf
 
-depends_8 = ["temp_3.bed", "temp_3.bim", "temp_3.fam"]
+depends_8 = ["temp_3.bed", "temp_3.bim", "temp_3.fam", args.prefix + ".frq"]
 
 targets_8 = []
 for i in [".bed", ".bim", ".fam"]:
@@ -132,25 +133,27 @@ depends_9 = targets_8
 
 targets_9 = args.prefix + ".maf-" + str(args.maf) + ".hwe"
 
-prefix_9 = args.prefix + ".maf-" + str(args.maf)
+prefix_in_9 = "temp_4.maf-" + str(args.maf)
+
+prefix_out_9 = args.prefix + ".maf-" + str(args.maf)
 
 workflow.add_task(
-	"plink --bfile [prefix] --hardy --out [prefix_out]",
+	"plink --bfile [prefix_in] --hardy --out [prefix_out]",
 	depends=depends_9,
 	targets=targets_9,
-	prefix=prefix_9,
-	prefix_out=args.prefix
+	prefix_in=prefix_in_9,
+	prefix_out=prefix_out_9
 	)
 
 # 10 - remove samples that deviate from HWE
 
-depends_10 = targets_8
+depends_10 = targets_9
 
 targets_10 = []
 for i in [".bed", ".bim", ".fam"]:
 	targets_10.append("temp_5.maf-" + str(args.maf) + ".hwe-" + str(args.hwe) + i)
 
-prefix_in_10 = "temp_4"
+prefix_in_10 = "temp_4.maf-" + str(args.maf)
 
 prefix_out_10 = "temp_5.maf-" + str(args.maf) + ".hwe-" + str(args.hwe)
 
@@ -180,32 +183,25 @@ workflow.add_task(
 
 # 12 - caclulate heterozygosity
 
-depends_12 = []
-for i in [".bed", ".bim", ".fam"]:
-	depends_12.append("temp_5.maf-" + str(args.maf) + ".hwe-" + str(args.hwe) + i)
+depends_12 = targets_11
 
-targets_12 = []
-for i in [".bed", ".bim", ".fam", ".het"]:
-	targets_12.append(args.prefix + ".maf-" + str(args.maf) + ".hwe-" + str(args.hwe) + i)
+targets_12 = args.prefix + ".maf-" + str(args.maf) + ".hwe-" + str(args.hwe) + ".het"
 
 prefix_in_12 = "temp_5.maf-" + str(args.maf) + ".hwe-" + str(args.hwe)
-
-extract_12 = "temp_5.maf-" + str(args.maf) + ".hwe-" + str(args.hwe) + ".prune.in"
 
 prefix_out_12 = args.prefix + ".maf-" + str(args.maf) + ".hwe-" + str(args.hwe)
 
 workflow.add_task(
-	"plink --bfile [prefix_in] --extract [extract] --het --out [prefix_out]",
+	"plink --bfile [prefix_in] --extract [depends[0]] --het --out [prefix_out]",
 	depends=depends_12,
 	targets=targets_12,
 	prefix_in=prefix_in_12,
-	extract=extract_12,
 	prefix_out=prefix_out_12
 	)
 
 # 13 - identify samples that deviate from heterozygosity
 
-depends_13 = args.prefix + ".maf-" + str(args.maf) + ".hwe-" + str(args.hwe) + ".het"
+depends_13 = targets_12
 
 targets_13 = args.prefix + ".maf-" + str(args.maf) + ".hwe-" + str(args.hwe) + ".qc-fail-het.txt"
 
@@ -217,9 +213,7 @@ workflow.add_task(
 
 # 14 - remove samples that deviate from heterozygosity
 
-depends_14 = []
-for i in [".bed", ".bim", ".fam"]:
-	depends_14.append("temp_5.maf-" + str(args.maf) + ".hwe-" + str(args.hwe) + i)
+depends_14 = targets_13
 
 targets_14 = []
 for i in [".bed", ".bim", ".fam"]:
@@ -227,16 +221,13 @@ for i in [".bed", ".bim", ".fam"]:
 
 prefix_in_14 = "temp_5.maf-" + str(args.maf) + ".hwe-" + str(args.hwe)
 
-remove_14 = args.prefix + ".maf-" + str(args.maf) + ".hwe-" + str(args.hwe) + ".qc-fail-het.txt"
-
 prefix_out_14 = "temp_6.maf-" + str(args.maf) + ".hwe-" + str(args.hwe)
 
 workflow.add_task(
-	"plink --bfile [prefix_in] --remove [remove] --make-bed --out [prefix_out]",
+	"plink --bfile [prefix_in] --remove [depends[0]] --make-bed --out [prefix_out]",
 	depends=depends_14,
 	targets=targets_14,
 	prefix_in=prefix_in_14,
-	remove=remove_14,
 	prefix_out=prefix_out_14
 	)
 
@@ -257,75 +248,67 @@ workflow.add_task(
 
 # 16 - calculate IBD
 
-depends_16 = targets_14
+depends_16 = targets_15
 
 targets_16 = args.prefix + str(args.maf) + ".hwe-" + str(args.hwe) + ".genome"
 
-prefix_16 = "temp_6.maf-" + str(args.maf) + ".hwe-" + str(args.hwe)
+prefix_in_16 = "temp_6.maf-" + str(args.maf) + ".hwe-" + str(args.hwe)
 
-extract_16 = targets_15
+prefix_out_16 = args.prefix + str(args.maf) + ".hwe-" + str(args.hwe)
 
 workflow.add_task(
-	"plink --bfile [prefix] --extract [extract] --genome --out [prefix]",
+	"plink --bfile [prefix_in] --extract [depends[0]] --genome --out [prefix_out]",
 	depends=depends_16,
 	targets=targets_16,
-	prefix=prefix_16,
-	extract=extract_16,
+	prefix_in=prefix_in_16,
+	prefix_out=prefix_out_16
 	)
 
 # 17 - missingness per individual
 
-depends_17 = targets_14
+depends_17 = targets_15
 
 targets_17 = "temp_6.maf-" + str(args.maf) + ".hwe-" + str(args.hwe) + ".imiss"
 
 prefix_17 = "temp_6.maf-" + str(args.maf) + ".hwe-" + str(args.hwe)
 
-extract_17 = targets_15
-
 workflow.add_task(
-	"plink --bfile [prefix] --extract [extract] --missing --out [prefix]",
+	"plink --bfile [prefix] --extract [depends[0]] --missing --out [prefix]",
 	depends=depends_17,
 	targets=targets_17,
-	prefix=prefix_17,
-	extract=extract_17
+	prefix=prefix_17
 	)
 
 # 18 - identify related individuals
 
-depends_18_a = args.prefix + str(args.maf) + ".hwe-" + str(args.hwe) + ".genome"
-
-depends_18_b = "temp_6.maf-" + str(args.maf) + ".hwe-" + str(args.hwe) + ".imiss"
+depends_18 = [targets_16, targets_17]
 
 targets_18 = args.prefix + ".maf-" + str(args.maf) + ".hwe-" + str(args.hwe) + ".ibd-" + str(args.pihat) + ".qc-fail-ibd.txt"
 
 workflow.add_task(
 	"plink_id_relatives.R -g [depends[0]] -m [depends[1]] -t [pihat] -o [targets[0]]",
-	depends=[depends_18_a, depends_18_b],
+	depends=depends_18,
 	targets=targets_18,
 	pihat=args.pihat
 	)
 
 # 19 - remove related individuals
 
-depends_19 = targets_14 
+depends_19 = targets_18
 
 targets_19 = []
 for i in [".bed", ".bim", ".fam"]:
-	targets_19.append(args.prefix + ".maf-" + str(args.maf) + ".hwe-" + str(args.hwe) + ".ibd-" + str(args.pihat) + i)
+	targets_19.append("temp_7.maf-" + str(args.maf) + ".hwe-" + str(args.hwe) + ".ibd-" + str(args.pihat) + i)
 
-prefix_in_19 = prefix_out_14
+prefix_in_19 = "temp_6.maf-" + str(args.maf) + ".hwe-" + str(args.hwe)
 
-remove_19 = targets_18
-
-prefix_out_19 = args.prefix + ".maf-" + str(args.maf) + ".hwe-" + str(args.hwe) + ".ibd-" + str(args.pihat) 
+prefix_out_19 = "temp_7.maf-" + str(args.maf) + ".hwe-" + str(args.hwe) + ".ibd-" + str(args.pihat)
 
 workflow.add_task(
-	"plink --bfile [prefix_in] --remove [remove] --make-bed --out [prefix_out]",
+	"plink --bfile [prefix_in] --remove [depends[0]] --make-bed --out [prefix_out]",
 	depends=depends_19,
 	targets=targets_19,
 	prefix_in=prefix_in_19,
-	remove=remove_19,
 	prefix_out=prefix_out_19
 	)
 
@@ -337,9 +320,9 @@ if args.ld_prune_pca == "true":
 
 	depends_20 = targets_19
 
-	targets_20 = args.prefix + ".maf-" + str(args.maf) + ".hwe-" + str(args.hwe) + ".ibd-" + str(args.pihat) + ".prune.in"
+	targets_20 = "temp_7.maf-" + str(args.maf) + ".hwe-" + str(args.hwe) + ".ibd-" + str(args.pihat) + ".prune.in"
 
-	prefix_20 = prefix_out_19
+	prefix_20 = "temp_7.maf-" + str(args.maf) + ".hwe-" + str(args.hwe) + ".ibd-" + str(args.pihat)
 
 	workflow.add_task(
 		"plink --bfile [prefix] --indep-pairwise 50 5 0.2 --out [prefix]",
@@ -350,24 +333,21 @@ if args.ld_prune_pca == "true":
 
 	# 21
 
-	depends_21 = targets_19
+	depends_21 = targets_20
 
 	targets_21 = []
 	for i in [".incl_outliers.eigenval", ".incl_outliers.eigenvec", ".incl_outliers.eigenvec.var"]:
 		targets_21.append(args.prefix + ".maf-" + str(args.maf) + ".hwe-" + str(args.hwe) + ".ibd-" + str(args.pihat) + i)
 
-	prefix_in_21 = prefix_out_19
+	prefix_in_21 = "temp_7.maf-" + str(args.maf) + ".hwe-" + str(args.hwe) + ".ibd-" + str(args.pihat)
 
-	extract_21 = args.prefix + ".maf-" + str(args.maf) + ".hwe-" + str(args.hwe) + ".ibd-" + str(args.pihat) + ".prune.in"
-
-	prefix_out_21 = args.prefix + ".maf-" + str(args.maf) + ".hwe-" + str(args.hwe) + ".ibd-" + str(args.pihat) + ".incl_outliers"
+	prefix_out_21 = args.prefix + str(args.maf) + ".hwe-" + str(args.hwe) + ".ibd-" + str(args.pihat) + ".incl_outliers"
 
 	workflow.add_task(
-		"plink --bfile [prefix_in] --extract [extract] --pca header tabs var-wts --out [prefix_out]",
+		"plink --bfile [prefix_in] --extract [depends[0]] --pca header tabs var-wts --out [prefix_out]",
 		depends=depends_21,
 		targets=prefix_21,
 		prefix_in=prefix_in_21,
-		extract=extract_21,
 		prefix_out=prefix_out_21
 		)
 
@@ -394,36 +374,36 @@ else:
 
 # 22 - identify outliers
 
-depends_22 = args.prefix + ".maf-" + str(args.maf) + ".hwe-" + str(args.hwe) + ".ibd-" + str(args.pihat) + ".incl_outliers.eigenvec"
+depends_22 = targets_21
 
-targets_22 = args.prefix + ".maf-" + str(args.maf) + ".hwe-" + str(args.hwe) + ".ibd-" + str(args.pihat) + ".subject_ids_to_keep.tsv"
+targets_22 = "temp_7.maf-" + str(args.maf) + ".hwe-" + str(args.hwe) + ".ibd-" + str(args.pihat) + ".subject_ids_to_keep.tsv"
+
+eigenvec_22 = args.prefix + ".maf-" + str(args.maf) + ".hwe-" + str(args.hwe) + ".ibd-" + str(args.pihat) + ".incl_outliers.eigenvec"
 
 workflow.add_task(
-	"plink_remove_outliers.R -i [depends[0]] -o [targets[0]]",
+	"plink_remove_outliers.R -i [eigenvec] -o [targets[0]]",
 	depends=depends_22,
-	targets=targets_22
+	targets=targets_22,
+	eigenvec=eigenvec_22
 	)
 
 # 23 - remove outliers
 
-depends_23 = targets_19
+depends_23 = targets_22
 
 targets_23 = []
-for i in [".bed", ".bim", ".fam", ".ped", ".map"]:
+for i in [".bed", ".bim", ".fam", ".map"]:
 	targets_23.append(args.prefix + ".maf-" + str(args.maf) + ".hwe-" + str(args.hwe) + ".ibd-" + str(args.pihat) + ".qc" + i)
 
-prefix_in_23 = args.prefix + ".maf-" + str(args.maf) + ".hwe-" + str(args.hwe) + ".ibd-" + str(args.pihat)
-
-keep_23 = args.prefix + ".maf-" + str(args.maf) + ".hwe-" + str(args.hwe) + ".ibd-" + str(args.pihat) + ".subject_ids_to_keep.tsv"
+prefix_in_23 = "temp_7.maf-" + str(args.maf) + ".hwe-" + str(args.hwe) + ".ibd-" + str(args.pihat)
 
 prefix_out_23 = args.prefix + ".maf-" + str(args.maf) + ".hwe-" + str(args.hwe) + ".ibd-" + str(args.pihat) + ".qc"
 
 workflow.add_task(
-	"plink --bfile [prefix_in] --keep [keep] --make-bed --recode tab lgen --keep-allele-order --out [prefix_out]",
+	"plink --bfile [prefix_in] --keep [depends[0]] --make-bed --recode lgen --keep-allele-order --out [prefix_out]",
 	depends=depends_23,
 	targets=targets_23,
 	prefix_in=prefix_in_23,
-	keep=keep_23,
 	prefix_out=prefix_out_23
 	)
 
@@ -438,7 +418,7 @@ prefix_in_24 = prefix_out_23
 prefix_out_24 = "temp_" + args.prefix + ".maf-" + str(args.maf) + ".hwe-" + str(args.hwe) + ".ibd-" + str(args.pihat) + ".qc"
 
 workflow.add_task(
-	"plink --bfile [prefix_in] --recode tab lgen-ref --out [prefix_out]",
+	"plink --bfile [prefix_in] --recode lgen-ref --out [prefix_out]",
 	depends=depends_24,
 	targets=targets_24,
 	prefix_in=prefix_in_24,
@@ -447,7 +427,7 @@ workflow.add_task(
 
 # 25 - rename .ref file
 
-depends_25 = "temp_" + args.prefix + ".maf-" + str(args.maf) + ".hwe-" + str(args.hwe) + ".ibd-" + str(args.pihat) + ".qc.ref"
+depends_25 = targets_24
 
 targets_25 = args.prefix + ".maf-" + str(args.maf) + ".hwe-" + str(args.hwe) + ".ibd-" + str(args.pihat) + ".qc.ref"
 
@@ -478,7 +458,7 @@ if args.ld_prune_pca == "true":
 	
 	# 27
 	
-	depends_27 = targets_23
+	depends_27 = targets_26
 
 	targets_27 = []
 	for i in [".excl_outliers.eigenval", ".excl_outliers.eigenvec", ".excl_outliers.eigenvec.var"]:
@@ -486,16 +466,13 @@ if args.ld_prune_pca == "true":
 
 	prefix_in_27 = prefix_26
 
-	extract_27 = targets_26
-
 	prefix_out_27 = prefix_26 + ".excl_outliers"
 
 	workflow.add_task(
-		"plink --bfile [prefix_in] --extract [extract] --pca header tabs var-wts --out [prefix_out]",
+		"plink --bfile [prefix_in] --extract [depends[0]] --pca header tabs var-wts --out [prefix_out]",
 		depends=depends_27,
 		targets=targets_27,
 		prefix_in=prefix_in_27,
-		extract_27=extract_27,
 		prefix_out_27=prefix_out_27
 		)
 
@@ -521,7 +498,7 @@ else:
 
 # 28 - select the first n PCs (n=args.npcs)
 
-depends_28 = args.prefix + ".maf-" + str(args.maf) + ".hwe-" + str(args.hwe) + ".ibd-" + str(args.pihat) + ".qc" + ".excl_outliers.eigenvec"
+depends_28 = targets_27
 
 targets_28 = args.prefix + ".qc.PCA_PC1-PC" + str(args.npcs) + ".tsv"
 
@@ -550,6 +527,12 @@ workflow.add_task_group(
 
 # 30 - plots
 
+depends_30 = targets_27
+
+targets_30 = []
+for i in [".PLINK_PCA_fig.png", ".QC_bar_summary.png", ".QC_histograms.png"]:
+	targets_30.append(args.prefix + ".maf-" + str(args.maf) + ".hwe-" + str(args.hwe) + ".ibd-" + str(args.pihat) + i)
+
 king_file = args.prefix + "_king_autoQC_Summary.txt"
 
 frq_file = args.prefix + ".frq"
@@ -560,18 +543,10 @@ genome_file = args.prefix + str(args.maf) + ".hwe-" + str(args.hwe) + ".genome"
 
 het_file = args.prefix + ".maf-" + str(args.maf) + ".hwe-" + str(args.hwe) + ".het"
 
-depends_30 = []
-for i in [".qc.excl_outliers.eigenvec", ".qc.excl_outliers.eigenvec", ".incl_outliers.eigenvec", ".excl_outliers.eigenvec"]:
-	depends_30.append(args.prefix + ".maf-" + str(args.maf) + ".hwe-" + str(args.hwe) + ".ibd-" + str(args.pihat) + i)
-
-targets_30 = []
-for i in [".PLINK_PCA_fig.png", ".QC_bar_summary.png", ".QC_histograms.png"]:
-	targets_30.append(args.prefix + ".maf-" + str(args.maf) + ".hwe-" + str(args.hwe) + ".ibd-" + str(args.pihat) + ".qc" + i)
-
-pca_prefix = args.prefix + ".maf-" + str(args.maf) + ".hwe-" + str(args.hwe) + ".ibd-" + str(args.pihat)
+pca_files = args.prefix + ".maf-" + str(args.maf) + ".hwe-" + str(args.hwe) + ".ibd-" + str(args.pihat)
 
 workflow.add_task_group(
-	"plink_plots.R --ki [king_file] --mi [frq_file] --mt [maf_thresh] --ei [hwe_file] --et [hwe_thresh] --gi [genome_file] --gt [ibd_thresh] --hi [het_file] --pc [pca_prefix]",
+	"plink_plots.R --ki [king_file] --mi [frq_file] --mt [maf_thresh] --ei [hwe_file] --et [hwe_thresh] --gi [genome_file] --gt [ibd_thresh] --hi [het_file] --pc [pca_files]",
 	depends=depends_30,
 	targets=targets_30,
 	king_file=king_file,
@@ -582,68 +557,119 @@ workflow.add_task_group(
 	genome_file=genome_file,
 	ibd_thresh=args.pihat,
 	het_file=het_file,
-	pca_prefix=pca_prefix
+	pca_files=pca_files
 	)
 
-# 31
+# 31 - download + unzip + sort the reference gff for humans
+
+targets_31_a = "GCF_000001405.39_GRCh38.p13_genomic.gff.gz"
 
 workflow.add_task(
-	"wget https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/001/405/GCF_000001405.39_GRCh38.p13/GCF_000001405.39_GRCh38.p13_genomic.gff.gz; gunzip GCF_000001405.39_GRCh38.p13_genomic.gff.gz",
-	targets="GCF_000001405.39_GRCh38.p13_genomic.gff"
+	"wget https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/001/405/GCF_000001405.39_GRCh38.p13/GCF_000001405.39_GRCh38.p13_genomic.gff.gz",
+	targets=targets_31_a,
 	)
 
-# 32
+depends_31_b = targets_31_a
+targets_31_b = "temp_GCF_000001405.39_GRCh38.p13_genomic.gff.gz"
 
-workflow.do("mv [d:GCF_000001405.39_GRCh38.p13_genomic.gff] [t:temp_GCF_000001405.39_GRCh38.p13_genomic.gff]")
+workflow.add_task("cp [depends[0]] [targets[0]]",
+	depends=depends_31_b,
+	targets=targets_31_b)
 
-# 33
+depends_31_c = targets_31_b
+targets_31_c = "temp_GCF_000001405.39_GRCh38.p13_genomic.gff"
 
-workflow.do("bedtools sort -i [d:temp_GCF_000001405.39_GRCh38.p13_genomic.gff] > [t:GCF_000001405.39_GRCh38.p13_genomic.sorted.gff]")
+workflow.add_task(
+	"yes n | gunzip [depends[0]]",
+	depends=depends_31_c,
+	targets=targets_31_c,
+	)
 
-# 34
+depends_31_d = targets_31_c
+targets_31_d = "GCF_000001405.39_GRCh38.p13_genomic.sorted.gff"
 
-depends_34 = args.prefix + ".maf-" + str(args.maf) + ".hwe-" + str(args.hwe) + ".ibd-" + str(args.pihat) + ".qc.map"
+workflow.add_task("bedtools sort -i [depends[0]] > [targets[0]]",
+	depends=depends_31_d,
+	targets=targets_31_d
+	)
+
+# 34 - convert our .map file to a .bed file
+
+targets_34_a = "GCF_000001405.39_GRCh38.p13_assembly_report.txt"
+
+workflow.add_task(
+	"wget https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/001/405/GCF_000001405.39_GRCh38.p13/GCF_000001405.39_GRCh38.p13_assembly_report.txt",
+	targets=targets_34_a,
+	)
+
+depends_34_b = targets_34_a
+targets_34_b = "temp_GCF_000001405.39_GRCh38.p13_assembly_report.txt"
+
+workflow.add_task("yes y | mv [depends[0]] [targets[0]]",
+	depends=depends_34_b,
+	targets=targets_34_b)
+
+depends_34_c = targets_34_b
+targets_34_c = "GCF_000001405.39_GRCh38.p13_assembly_report.txt"
+
+workflow.add_task("tail -n +63 [depends[0]] > [targets[0]]",
+	depends=depends_34_c,
+	targets=targets_34_c)
+
+depends_34 = [args.prefix + ".maf-" + str(args.maf) + ".hwe-" + str(args.hwe) + ".ibd-" + str(args.pihat) + ".qc.map", "GCF_000001405.39_GRCh38.p13_assembly_report.txt"]
+
+rsid_positions_34 = args.prefix + ".maf-" + str(args.maf) + ".hwe-" + str(args.hwe) + ".ibd-" + str(args.pihat) + ".qc.map"
 
 targets_34 = args.prefix + ".maf-" + str(args.maf) + ".hwe-" + str(args.hwe) + ".ibd-" + str(args.pihat) + ".qc.map_bed"
 
 workflow.add_task(
-	"plink_map.R -i [depends[0]] -o [targets[0]]",
+	"plink_map.R -i [rsid_positions] -o [targets[0]]",
 	depends=depends_34,
-	targets=targets_34
+	targets=targets_34,
+	rsid_positions=rsid_positions_34
 	)
 
-# 35
+# 35 - sort our .bed file
 
-depends_35 = args.prefix + ".maf-" + str(args.maf) + ".hwe-" + str(args.hwe) + ".ibd-" + str(args.pihat) + ".qc.map_bed"
+depends_35 = targets_34
 
 targets_35 = args.prefix + ".maf-" + str(args.maf) + ".hwe-" + str(args.hwe) + ".ibd-" + str(args.pihat) + ".qc.map_sorted.bed"
 
+rsid_positions_35 = args.prefix + ".maf-" + str(args.maf) + ".hwe-" + str(args.hwe) + ".ibd-" + str(args.pihat) + ".qc.map_bed"
+
 workflow.add_task(
-	"bedtools sort -i [depends[0]]> [targets[0]]",
+	"bedtools sort -i [rsid_positions] > [targets[0]]",
 	depends=depends_35,
-	targets=targets_35
+	targets=targets_35,
+	rsid_positions=rsid_positions_35
 	)
 
-# 36
+# 36 - identify closest genes
 
-depends_36_a = args.prefix + ".maf-" + str(args.maf) + ".hwe-" + str(args.hwe) + ".ibd-" + str(args.pihat) + ".qc.map_sorted.bed"
-depends_36_b = "GCF_000001405.39_GRCh38.p13_genomic.sorted.gff"
+depends_36 = [targets_35, targets_31_d]
 
 targets_36 = args.prefix + ".maf-" + str(args.maf) + ".hwe-" + str(args.hwe) + ".ibd-" + str(args.pihat) + ".qc.closest_gene.bed"
 
 workflow.add_task(
 	"bedtools closest -a [depends[0]] -b [depends[1]] > [targets[0]]",
-	depends=[depends_36_a, depends_36_b],
+	depends=depends_36,
 	targets=targets_36
 	)
 
-# 37
+# 37 - download HGNC data
 
-workflow.do("wget ftp://ftp.ebi.ac.uk/pub/databases/genenames/hgnc/tsv/hgnc_complete_set.txt; mv hgnc_complete_set.txt temp_hgnc_complete_set.txt; cut -f1-3 temp_hgnc_complete_set.txt > [t: hgnc_complete_set.txt]")
+workflow.add_task(
+	"wget ftp://ftp.ebi.ac.uk/pub/databases/genenames/hgnc/tsv/hgnc_complete_set.txt",
+	targets="hgnc_complete_set.txt",
+	)
+
+workflow.do("mv [d:hgnc_complete_set.txt] [t:temp_hgnc_complete_set.txt]")
+
+workflow.do("cut -f1-3 [d:temp_hgnc_complete_set.txt] > [t:hgnc_complete_set.txt]")
 
 # 38
 
-depends_38 = args.prefix + ".maf-" + str(args.maf) + ".hwe-" + str(args.hwe) + ".ibd-" + str(args.pihat) + ".qc.closest_gene.bed"
+depends_38 = [targets_36, "hgnc_complete_set.txt"]
 
 targets_38 = args.prefix + ".maf-" + str(args.maf) + ".hwe-" + str(args.hwe) + ".ibd-" + str(args.pihat) + ".qc.rsid_to_gene.map.txt"
 
@@ -664,14 +690,15 @@ targets_39_b = args.prefix + ".maf-" + str(args.maf) + ".hwe-" + str(args.hwe) +
 
 prefix_out_39 = args.prefix + ".maf-" + str(args.maf) + ".hwe-" + str(args.hwe) + ".ibd-" + str(args.pihat) + ".qc"
 
-workflow.add_task(
-	"plink_pc_loadings_viz.R -i [loadings] -a [names] -m [positions] -o [prefix]",
-	targets=[targets_39_a, targets_39_b],
-	loadings=rsid_loadings,
-	names=rsid_names,
-	positions=rsid_positions,
-	prefix=prefix_out_39
-	)
+#workflow.add_task(
+#	"plink_pc_loadings_viz.R -i [loadings] -a [names] -m [positions] -o [prefix]",
+#	depends=targets_23,
+#	targets=[targets_39_a, targets_39_b],
+#	loadings=rsid_loadings,
+#	names=rsid_names,
+#	positions=rsid_positions,
+#	prefix=prefix_out_39
+#	)
 
 # 40
 
@@ -689,6 +716,8 @@ targets_40 = args.prefix + ".maf-" + str(args.maf) + ".hwe-" + str(args.hwe) + "
 # run the workflow
 
 workflow.go()
+
+print(targets_34_c)
 
 #cat temp_*.log > "${pre}".qc.log
 
