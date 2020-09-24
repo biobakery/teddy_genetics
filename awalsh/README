@@ -37,6 +37,23 @@ The wrapper will output the following:
 
 Alternatively, the script anadama2_plink.py is a workflow that will run the PLINK pipeline (works as of 24/09/2020)
 
+  --genetics GENETICS   Prefix of raw genotype data
+  --subjects SUBJECTS   Subjects to include
+  --prefix PREFIX       Prefix of output
+                        [default: plink]
+  --maf MAF             Minor allele frequency threshold
+                        [default: 0.05]
+  --hwe HWE             Hardy-Weinberg equilibrium theshold
+                        [default: 0.001]
+  --pihat PIHAT         PI_HAT threshold
+                        [default: 0.2]
+  --ld-prune-pca {true,false}
+                        Do LD pruning prior to PCA
+                        [default: false]
+  --npcs NPCS           The number of PCs to use
+                        [default: 5]
+
+
 ###########################
 # Code for running models #
 ###########################
