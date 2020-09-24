@@ -1,8 +1,19 @@
 #!/usr/bin/env python
 
 from anadama2 import Workflow
-import glob
 import subprocess
+import os
+
+# make tmp directory OR move files from the tmp directory to the working directory 
+
+directory = "./tmp"
+
+if not os.path.exists(directory):
+    os.makedirs(directory)
+
+subprocess.call("mv tmp/* .", shell=True)
+
+# add arguments
 
 workflow = Workflow(version="0.1", description="A workflow to process genotype data for TEDDY2 using PLINK")
 
@@ -392,7 +403,7 @@ workflow.add_task(
 depends_23 = targets_22
 
 targets_23 = []
-for i in [".bed", ".bim", ".fam", ".map"]:
+for i in [".bed", ".bim", ".fam", ".map", ".lgen"]:
 	targets_23.append(args.prefix + ".maf-" + str(args.maf) + ".hwe-" + str(args.hwe) + ".ibd-" + str(args.pihat) + ".qc" + i)
 
 prefix_in_23 = "temp_7.maf-" + str(args.maf) + ".hwe-" + str(args.hwe) + ".ibd-" + str(args.pihat)
@@ -503,7 +514,7 @@ depends_28 = targets_27
 targets_28 = args.prefix + ".qc.PCA_PC1-PC" + str(args.npcs) + ".tsv"
 
 workflow.add_task(
-	"cut -f2-" + str(args.npcs + 2) + "[depends[0]] > [targets[0]]",
+	"cut -f2-" + str(args.npcs + 2) + " [depends[0]] > [targets[0]]",
 	depends=depends_28,
 	targets=targets_28
 	)
@@ -651,7 +662,7 @@ depends_36 = [targets_35, targets_31_d]
 targets_36 = args.prefix + ".maf-" + str(args.maf) + ".hwe-" + str(args.hwe) + ".ibd-" + str(args.pihat) + ".qc.closest_gene.bed"
 
 workflow.add_task(
-	"bedtools closest -a [depends[0]] -b [depends[1]] > [targets[0]]",
+	"bedtools closest -a [depends[0]] -b [depends[1]] -d > [targets[0]]",
 	depends=depends_36,
 	targets=targets_36
 	)
@@ -667,7 +678,7 @@ workflow.do("mv [d:hgnc_complete_set.txt] [t:temp_hgnc_complete_set.txt]")
 
 workflow.do("cut -f1-3 [d:temp_hgnc_complete_set.txt] > [t:hgnc_complete_set.txt]")
 
-# 38
+# 38 - annotate SNPs
 
 depends_38 = [targets_36, "hgnc_complete_set.txt"]
 
@@ -679,48 +690,63 @@ workflow.add_task(
 	targets=targets_38
 	)
 
-# 39
+# 39 - visualise the PC loadings of SNPs
 
-rsid_loadings = args.prefix + ".maf-" + str(args.maf) + ".hwe-" + str(args.hwe) + ".ibd-" + str(args.pihat) + ".qc.excl_outliers.eigenvec.var"
-rsid_names = args.prefix + ".maf-" + str(args.maf) + ".hwe-" + str(args.hwe) + ".ibd-" + str(args.pihat) + ".qc.rsid_to_gene.map.txt"
-rsid_positions = args.prefix + ".maf-" + str(args.maf) + ".hwe-" + str(args.hwe) + ".ibd-" + str(args.pihat) + ".qc.map"
+depends_39 = [targets_27[1], targets_38]
+
+rsid_loadings_39 = args.prefix + ".maf-" + str(args.maf) + ".hwe-" + str(args.hwe) + ".ibd-" + str(args.pihat) + ".qc.excl_outliers.eigenvec.var"
+rsid_names_39 = args.prefix + ".maf-" + str(args.maf) + ".hwe-" + str(args.hwe) + ".ibd-" + str(args.pihat) + ".qc.rsid_to_gene.map.txt"
+rsid_positions_39 = args.prefix + ".maf-" + str(args.maf) + ".hwe-" + str(args.hwe) + ".ibd-" + str(args.pihat) + ".qc.map"
 
 targets_39_a = args.prefix + ".maf-" + str(args.maf) + ".hwe-" + str(args.hwe) + ".ibd-" + str(args.pihat) + ".qc.pc_loadings_scatter.png"
 targets_39_b = args.prefix + ".maf-" + str(args.maf) + ".hwe-" + str(args.hwe) + ".ibd-" + str(args.pihat) + ".qc.pc_loadings_manhattan.png"
 
 prefix_out_39 = args.prefix + ".maf-" + str(args.maf) + ".hwe-" + str(args.hwe) + ".ibd-" + str(args.pihat) + ".qc"
 
-#workflow.add_task(
-#	"plink_pc_loadings_viz.R -i [loadings] -a [names] -m [positions] -o [prefix]",
-#	depends=targets_23,
-#	targets=[targets_39_a, targets_39_b],
-#	loadings=rsid_loadings,
-#	names=rsid_names,
-#	positions=rsid_positions,
-#	prefix=prefix_out_39
-#	)
+workflow.add_task(
+	"plink_pc_loadings_viz.R -i [loadings] -a [names] -m [positions] -o [prefix]",
+	depends=depends_39,
+	targets=[targets_39_a, targets_39_b],
+	loadings=rsid_loadings_39,
+	names=rsid_names_39,
+	positions=rsid_positions_39,
+	prefix=prefix_out_39
+	)
 
-# 40
+# 40 - make the genetics table
 
-depends_40_a = args.prefix + ".maf-" + str(args.maf) + ".hwe-" + str(args.hwe) + ".ibd-" + str(args.pihat) + ".qc.lgen"
-depends_40_b = args.prefix + ".maf-" + str(args.maf) + ".hwe-" + str(args.hwe) + ".ibd-" + str(args.pihat) + ".qc.ref"
+depends_40_i = targets_23[4]
+targets_40_i = "temp_" + depends_40_i
+
+workflow.add_task(
+	"cut -f2 [depends[0]] > [targets[0]]",
+	depends=depends_40_i,
+	targets=targets_40_i
+	)
+
+depends_40_a = targets_40_i
+depends_40_b = targets_25
 
 targets_40 = args.prefix + ".maf-" + str(args.maf) + ".hwe-" + str(args.hwe) + ".ibd-" + str(args.pihat) + ".qc.genetics.tsv"
 
-#workflow.add_task(
-#	"plink_pc_loadings_viz.R -i [depends[0]] -a [depends[1]] -m [depends[2]] -o [depends[3]]",
-#	depends=[depends_39_a, depends_39_b, depends_39_c],
-#	targets=[targets_39_a, targets_39_b]
-#	)
+workflow.add_task(
+	"plink_make_genetics_table.R -i [depends[0]] -r [depends[1]] -o [targets[0]]",
+	depends=[depends_40_a, depends_40_b],
+	targets=targets_40
+	)
 
 # run the workflow
 
 workflow.go()
 
-print(targets_34_c)
+# move intermediary files to tmp/
 
-#cat temp_*.log > "${pre}".qc.log
+subprocess.call("mv *.* tmp/", shell=True)
 
-#rm temp_*
+subprocess.call("mv tmp/" + targets_40 + " .", shell=True)
+
+subprocess.call("mv tmp/" + targets_28 + " .", shell=True)
+
+subprocess.call("mv tmp/*.png .", shell=True)
 
 # END
