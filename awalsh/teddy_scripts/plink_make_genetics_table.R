@@ -19,15 +19,16 @@ opts <- docopt(doc)
 library(tidyverse)
 library(reshape2)
 
-data <- read.csv(opts$i, header=F, sep="\t")
+data <- data.table::fread(opts$i, sep=" ", header=F) %>%
+	mutate(V1 = gsub("0\t", "", V1))
 
 df <- data %>%
-	select(2,3,5) %>%
+	mutate(V5 = paste0(V3, V4)) %>%
 	filter(!grepl("00", V5)) %>%
-	mutate(V5 = gsub(" ", "", V5)) %>%
-	rename(Subject=1, Variant=2, Genotype=3)
+	select(V1, V2, V5) %>%
+	rename(Subject=V1, Variant=V2, Genotype=V5)
 
-map <- read.csv(opts$r, header=F, sep="\t") %>%
+map <- data.table::fread(opts$r, header=F) %>%
 	rename(Variant=1, Major=2, Minor=3)
 
 gen <- df %>%

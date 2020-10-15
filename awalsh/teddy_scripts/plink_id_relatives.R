@@ -2,12 +2,13 @@
 
 require(docopt)
 'Usage:
-   plink_id_relatives.R [-g <genome> -t <pihat> -m <missingness>]
+   plink_id_relatives.R [-g <genome> -t <pihat> -m <missingness> -o <output>]
 
 Options:
    -g genome (.genome)
    -t threshold (pihat)
    -m missingness (.imiss)
+   -o output
 
 ' -> doc 
 
@@ -35,7 +36,7 @@ subjects_to_remove <- read.table(opts$g, header=T, as.is=T) %>%
 	as.data.frame()
 
 write.table(subjects_to_remove, 
-	"qc-fail-ibd.txt",
+	opts$o,
 	col.names=F,
 	row.names=F,
 	quote=F)

@@ -27,6 +27,8 @@ ab <- as.numeric(opts$a)
 prev <- as.numeric(opts$p)
 N <- prev * ncol(MicroFeat[-1])
 
+prefix <- stringr::str_remove(opts$i, ".tsv")
+
 # list the features that meet the criteria
 
 if(grepl("Species", opts$f) == TRUE){
@@ -42,6 +44,8 @@ MicroFeat_list <- MicroFeat %>%
 	filter(n > N) %>%
 	select(MicroFeat) %>%
 	as.data.frame()
+
+write.table(MicroFeat_list, paste0(prefix, ".major_list.tsv"), quote=F, row.names=F)
 
 } else {
 
@@ -98,8 +102,6 @@ MicroTrans <- MicroFeat_df %>%
 	mutate(value = tran_func(value)) %>%
 	dcast(variable ~ MicroFeat, value.var="value") %>%
 	rename(sample_id=1)
-
-prefix <- stringr::str_remove(opts$i, ".tsv")
 
 write.table(MicroTrans, paste0(prefix, ".major.tsv"), sep="\t", quote=F, row.names=F)
 	

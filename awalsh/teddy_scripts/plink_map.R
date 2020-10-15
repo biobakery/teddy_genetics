@@ -22,7 +22,7 @@ map <- read.csv("GCF_000001405.39_GRCh38.p13_assembly_report.txt", sep="\t", hea
 	distinct()
 head(map)
 
-genetics <- read.csv(opts$i, sep="\t", header=F) %>%
+genetics <- read.table(opts$i, sep="\t", header=F) %>%
 	rename(UCSC=V1, start=V4, rs=2) %>%
 	select(UCSC, start, rs) %>%
 	mutate(end = start+1) %>%

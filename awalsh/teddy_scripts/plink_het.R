@@ -2,11 +2,12 @@
 
 require(docopt)
 'Usage:
-   plink_het.R [-i <input>]
+   plink_het.R [-i <input> -o <output>]
 
 Options:
    -i input (.het)
-
+   -o output
+   
 ' -> doc 
 
 opts <- docopt(doc)
@@ -24,7 +25,7 @@ het <- read.table(opts$i, header=T) %>%
 	select(FID, IID)
 
 write.table(het,
-	"qc-fail-het.txt",
+	opts$o,
 	col.names=FALSE,
 	row.names=FALSE,
 	quote=F)

@@ -23,17 +23,12 @@ library(scales)
 
 loadings <- read.table(opts$i, header=T) %>%
 	select(2, 5:9) %>%
-	rename(snp=VAR) %>%
-	mutate(index=row_number())
+	rename(snp=VAR)
 
 map <- read.csv(opts$a, sep="\t", header=T)
 
-################
-# scatter plot #
-################
-
 ml <- loadings %>%
-	melt(id=c("snp", "index"), variable="pc", value.name="value")
+	melt(id="snp", variable="pc", value.name="value")
 
 ml_ann <- loadings %>%
 	melt(id="snp", variable.name="pc", value.name="value") %>%
@@ -44,29 +39,6 @@ ml_ann <- loadings %>%
 	merge(., map, by="snp") %>%
 	select(pc, snp, symbol, name) %>%
 	merge(., ml, by=c("pc", "snp"))
-
-p <- ggplot(ml, aes(x=index, y=value)) +
-	facet_wrap(~pc, nrow=nlevels(as.factor(ml$pc)), scales="free_y") +
-	geom_point(aes(colour=value, fill=value)) +
-	scale_colour_gradient2(low = "darkblue", mid = "white", high = "darkred") +
-	scale_fill_gradient2(low = "darkblue", mid = "white", high = "darkred") +
-	theme_bw() +
-	theme(
-		axis.title = element_text(size=12.5, face="bold"),
-		axis.text = element_text(size=12.5),
-		legend.title = element_text(size=12.5, face="bold", vjust=0.75),
-		legend.text = element_text(size=8.75),
-		legend.position = "top",
-		strip.text = element_text(size=12.5, face="bold", angle=0),
-		panel.background=element_rect(fill="white"),
-		panel.grid=element_blank()) +
-	geom_hline(yintercept=0, linetype="dashed", colour="grey") +
-	geom_label_repel(data=ml_ann, aes(x=index, y=value, label=symbol), segment.alpha=0.5) +
-	scale_x_continuous(labels=scientific) +
-	scale_y_continuous(expand=c(0.1, 0.1)) +
-	labs(x="Index", y="Loading", colour="Loading", fill="Loading")
-
-ggsave(plot=p, paste0(opts$o, "_pc_loadings_scatter.png"), dpi=300, height=20, width=15)
 
 ##################
 # Manhattan plot #
@@ -81,7 +53,7 @@ man <- read.csv(opts$m,
 	arrange(chr, bp) %>%
 	mutate(bp = cumsum(as.numeric(bp))) %>%
 	merge(., ml, by="snp")
-	
+
 # set x-axis labels to the centre of each chromosome
 
 axis.set <- man %>% 
@@ -106,7 +78,8 @@ man_ann <- loadings %>%
 	ungroup() %>%
 	merge(., map, by="snp") %>%
 	select(pc, snp, symbol, name) %>%
-	merge(., man, by=c("pc", "snp"))
+	merge(., man, by=c("pc", "snp")) %>%
+	as.data.frame()
 
 # plot
 
@@ -114,8 +87,8 @@ manhplot <- ggplot(man, aes(x=bp, y=value)) +
 	facet_wrap(~pc, scales="fixed", nrow=5) +
 	geom_point(aes(colour=value, fill=value)) +
 	geom_hline(yintercept = 0, color = "grey", linetype = "dashed") +
-	scale_colour_gradient2(low = "darkblue", mid = "white", high = "darkred") +
-	scale_fill_gradient2(low = "darkblue", mid = "white", high = "darkred") +
+	scale_colour_gradient2(low = "steelblue", mid = "white", high = "darksalmon") +
+	scale_fill_gradient2(low = "steelblue", mid = "white", high = "darksalmon") +
 	theme_bw() +
 	theme( 
 		legend.title = element_text(size=12.5, face="bold", vjust=0.75),
@@ -138,6 +111,6 @@ manhplot <- ggplot(man, aes(x=bp, y=value)) +
 	labs(x="Chromosome", y="Loading", colour="Loading", fill="Loading") +
 	geom_label_repel(data=man_ann, aes(label=symbol))
 
-ggsave(plot=manhplot, paste0(opts$o, "_pc_loadings_man_pruned.png"), dpi=300, height=15, width=20)
+ggsave(plot=manhplot, paste0(opts$o, ".pc_loadings_manhattan.png"), dpi=300, height=2/3*15, width=2/3*20)
 
 ###

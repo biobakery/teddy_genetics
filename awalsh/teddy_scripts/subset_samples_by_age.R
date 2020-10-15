@@ -49,7 +49,9 @@ samples_2 <- metadata_for_samples %>%
 suffix <- stringr::str_remove(opts$microbiome, ".tsv") %>%
 	gsub(".*/", "", .)
 
-microbiome <- read.table(opts$microbiome, header=T, row.names=1, check.names=F) %>%
+microbiome <- data.table::fread(opts$microbiome, header=T) %>%
+	rename(MicroFeat=1) %>%
+	column_to_rownames("MicroFeat") %>%
 	t(.) %>%
 	as.data.frame() %>%
 	rownames_to_column("sample_id") %>%
