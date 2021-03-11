@@ -3,7 +3,7 @@
 require(docopt)
 
 'Usage:
-   plink_plots.R [--ki <txt> --mi <frq> --mt <maf_min> --ei <hwe> --et <hwe_min> --gi <genome> --gt <pihat_max> --hi <het> --pc <pca> --md <metadata>]
+   plink_plots.R [--ki <txt> --mi <frq> --mt <maf_min> --ei <hwe> --et <hwe_min> --gi <genome> --gt <pihat_max> --hi <het> --pc <pca> --md <metadata> --out <output>]
 
 Options:
    --ki output from KING autoQC (_king_autoQC_Summary.txt)
@@ -16,6 +16,7 @@ Options:
    --hi heterozygosity values (.het)
    --pc prefix of pca files
    --md metadata for samples (.tsv)
+   --out output directory [default: plink_output/]
 
  ' -> doc
 
@@ -32,6 +33,8 @@ library(data.table)
 library(ggridges)
 library(wesanderson)
 library(cowplot)
+
+prefix <- gsub(".*\\/", "", opts$pc)
 
 ###############
 # KING autoQC #
@@ -367,7 +370,7 @@ pca_fig_ab <- plot_grid(scree_plot, pca_plot, nrow=2, align="v", scale=0.95)
 pca_fig_abc <- plot_grid(pca_fig_ab, pc_ridges, nrow=1, align="h", axis="tblr", scale=0.95)
 
 ggsave(plot=pca_fig_abc,
-	file=paste0(opts$pc, ".PLINK_PCA_fig.png"),
+	file=paste0(opts$out, prefix, ".PLINK_PCA_fig.png"),
 	height=10, width=15,
 	dpi=300)
 
@@ -414,7 +417,7 @@ x.var <- sapply(ggplot_build(summary_bar)$layout$panel_scales_x,
 
 gp$widths[facet.columns] <- gp$widths[facet.columns] * x.var
 
-ggsave(plot=gp, paste0(opts$pc, ".QC_bar_summary.png"),
+ggsave(plot=gp, paste0(opts$out, prefix, ".QC_bar_summary.png"),
 	height=5, width=12.5,
 	dpi=300)
 
@@ -428,7 +431,7 @@ bottom_row <- plot_grid(het_hist, ibd_hist, ibs_hist, ncol=3)
 
 combined_hist <- plot_grid(top_row, bottom_row, nrow=2, scale=0.95)
 
-ggsave(plot=combined_hist, paste0(opts$pc, ".QC_histograms.png"),
+ggsave(plot=combined_hist, paste0(opts$out, prefix, ".QC_histograms.png"),
 	height=10, width=20,
 	dpi=300)
 

@@ -16,7 +16,7 @@ opts <- docopt(doc)
 
 library(tidyverse)
 
-map <- read.csv("GCF_000001405.39_GRCh38.p13_assembly_report.txt", sep="\t", header=T) %>%
+map <- read.csv("tmp/GCF_000001405.39_GRCh38.p13_assembly_report.txt", sep="\t", header=T) %>%
 	dplyr::select(7, 10) %>%
 	dplyr::rename(RefSeq=1, UCSC=2) %>%
 	distinct()

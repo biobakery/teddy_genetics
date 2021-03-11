@@ -16,7 +16,7 @@ opts <- docopt(doc)
 
 library(tidyverse)
 
-map <- read.csv("hgnc_complete_set.txt", header=T, sep="\t")
+map <- read.csv("tmp/hgnc_complete_set.txt", header=T, sep="\t")
 
 df <- read.csv(opts$i, header=F, sep="\t") %>%
 	filter(grepl("HGNC", V13)) %>%

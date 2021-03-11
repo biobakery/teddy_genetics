@@ -11,7 +11,7 @@ args = parser.parse_args()
 
 files = glob.glob("*{}".format(args.ext))
 
-df_from_each_file = (pd.read_csv(f) for f in files)
+df_from_each_file = (pd.read_csv(f, sep="\t") for f in files)
 
 concatenated_df   = pd.concat(df_from_each_file, ignore_index=True)
 

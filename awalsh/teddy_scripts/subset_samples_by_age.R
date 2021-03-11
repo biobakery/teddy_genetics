@@ -3,7 +3,7 @@
 require(docopt)
 
 'Usage:
-   subset_samples_by_age.R [--metadata <metadata> --min-a <min_1> --max-a <max_1> --min-b <min_2> --max-b <max_2> --microbiome <microbiome>]
+   subset_samples_by_age.R [--metadata <metadata> --min-a <min_1> --max-a <max_1> --min-b <min_2> --max-b <max_2> --microbiome <microbiome> -o <out_dir>]
 
 Options:
    --metadata sample metadata
@@ -12,6 +12,7 @@ Options:
    --min-b minimum age in days for toddler subset
    --max-b maximum age in days for toddler subset
    --microbiome microbiome data
+   -o output directory
 
 ' -> doc
 
@@ -64,7 +65,7 @@ micro_subset_1 <- merge(microbiome, samples_1, by="sample_id") %>%
 	rownames_to_column("MicoFeat")
 
 write.table(micro_subset_1, 
-	paste0("days_", opts$min_a, "-", opts$max_a, ".", suffix, ".tsv"),
+	paste0(opts$o, "/days_", opts$min_a, "-", opts$max_a, ".", suffix, ".tsv"),
 	sep="\t", quote=F, row.names=F)
 
 micro_subset_2 <- merge(microbiome, samples_2, by="sample_id") %>%
@@ -74,7 +75,7 @@ micro_subset_2 <- merge(microbiome, samples_2, by="sample_id") %>%
 	rownames_to_column("MicoFeat")
 
 write.table(micro_subset_2, 
-	paste0("days_", opts$min_b, "-", opts$max_b, ".", suffix, ".tsv"),
+	paste0(opts$o, "/days_", opts$min_b, "-", opts$max_b, ".", suffix, ".tsv"),
 	sep="\t", quote=F, row.names=F)
 
 ###

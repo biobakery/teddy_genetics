@@ -19,7 +19,7 @@ library(scales)
 
 prefix <- opts$p
 
-king_raw <- read.csv("temp_autoQC_smry.txt", header=F, sep="\t") %>%
+king_raw <- read.csv("tmp/temp_autoQC_smry.txt", header=F, sep="\t") %>%
 	mutate(V4 = case_when(
 		grepl("SNP",V1) ~ "SNPs",
 		!grepl("SNP",V1) & !grepl("data", V1) ~ "Subjects",

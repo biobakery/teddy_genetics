@@ -2,11 +2,12 @@
 
 require(docopt)
 'Usage:
-   format_input.R [-m <microbiome> -g <genetics> -d <metadata> -o <output>]
+   format_input.R [-m <microbiome> -f <feature> -g <genetics> -d <metadata> -o <output>]
 
 Options:
-   -m microbiome features
-   -g genetic features
+   -m microbiome data
+   -f microbiome feature
+   -g genetic data
    -d metadata
    -o output
 
@@ -21,9 +22,22 @@ library(reshape2)
 
 # microbiome data
 
-microbiome <- read.csv(opts$m, sep="\t", header=T, check.names=F) %>%
-	setNames(paste0("microbiome:", names(.))) %>%
-	rename(sample_id=1)
+if (opts$f == "Bray-Curtis") {
+	
+	microbiome <- read.csv(opts$m, sep="\t", header=T, check.names=F, row.names=1) %>%
+		t(.) %>%
+		as.data.frame() %>%
+		rownames_to_column("sample_id") %>%
+		setNames(paste0("microbiome:", names(.))) %>%
+		rename(sample_id=1)
+		
+} else {
+	
+	microbiome <- read.csv(opts$m, sep="\t", header=T, check.names=F) %>%
+		setNames(paste0("microbiome:", names(.))) %>%
+		rename(sample_id=1)
+	
+}
 
 # genetics data
 

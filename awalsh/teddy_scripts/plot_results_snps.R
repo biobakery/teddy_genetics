@@ -2,11 +2,11 @@
 
 require(docopt)
 'Usage:
-   plot_results_snps.R [-i <input> -o <output>]
+   plot_results_snps.R [-i <input> -p <p_value> -m <microbiome> -g <genetics> -d <metadata> -o <output>]
 
 Options:
    -i model stats
-   -p p-value adjustment method
+   -p p-value [default: 5e-08]
    -m microbiome features
    -g genetic features
    -d metadata
@@ -25,6 +25,13 @@ library(lmerTest)
 library(scales)
 library(cowplot)
 
+opts$i <- "species_pvalues_toddlers.tsv"
+opts$m <- "days_549-1095.metaphlan2.major.tsv"
+opts$g <- "../../plink_output/genetics.SNPs.tsv"
+opts$d <- "metadata.tsv"
+opts$o <- "toddlers"
+
+
 # flags: stats (fixed + interaction), microbiome, genetics, metadata, output (directory)
 
 ####################
@@ -42,7 +49,7 @@ levels(as.factor(model_stats$Type))
 
 # fixed effect
 
-fe <- data.table::fread("~/Desktop/teddy2/test/mphlan_infants_model_stats_genetics_fixed_effects.tsv")
+fe <- data.table::fread(opts$i)
 
 sig_fe <- fe %>%
 	top_n(P_adj, n=-25) %>%
