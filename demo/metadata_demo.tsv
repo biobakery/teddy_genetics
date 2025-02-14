@@ -1,0 +1,1017 @@
+sample_id	subject_id	Days	Clinical_Center	AB	T1D	AB_T1D_time	AB_T1D	Sex	FDR	delivery_class	time_to_brstfed_stop	age_startsolid	Antibiotics	Probiotic	bc_dists_init
+68	9040	133	Center_d	FALSE	FALSE	592	1	Female	C	vaginal	386	167	Y	YES	
+140	9040	161	Center_d	FALSE	FALSE	592	1	Female	C	vaginal	386	167	Y	YES	0.13
+224	9040	190	Center_d	FALSE	FALSE	592	1	Female	C	vaginal	386	167	Y	YES	0.11
+388	9040	260	Center_d	FALSE	FALSE	592	1	Female	C	vaginal	386	167	Y	YES	0.11
+466	9040	287	Center_d	FALSE	FALSE	592	1	Female	C	vaginal	386	167	Y	YES	0.28
+558	9040	331	Center_d	FALSE	FALSE	592	1	Female	C	vaginal	386	167	Y	YES	0.17
+631	9040	360	Center_d	FALSE	FALSE	592	1	Female	C	vaginal	386	167	Y	YES	0.38
+739	9040	413	Center_d	FALSE	FALSE	592	1	Female	C	vaginal	386	167	Y	YES	0.12
+865	9040	469	Center_d	FALSE	FALSE	592	1	Female	C	vaginal	386	167	Y	YES	0.29
+922	9040	497	Center_d	FALSE	FALSE	592	1	Female	C	vaginal	386	167	Y	YES	0.79
+1009	9040	546	Center_d	FALSE	FALSE	592	1	Female	C	vaginal	386	167	Y	YES	0.68
+147	9044	163	Center_b		FALSE	441	1	Female	B	vaginal	367	77	N	NO	
+254	9044	210	Center_b		FALSE	441	1	Female	B	vaginal	367	77	N	NO	0.49
+342	9044	244	Center_b		FALSE	441	1	Female	B	vaginal	367	77	N	NO	0.73
+601	9044	344	Center_b		FALSE	441	1	Female	B	vaginal	367	77	N	NO	0.78
+676	9044	377	Center_b		FALSE	441	1	Female	B	vaginal	367	77	N	NO	0.83
+726	9044	405	Center_b		FALSE	441	1	Female	B	vaginal	367	77	N	NO	0.81
+794	9044	434	Center_b		FALSE	441	1	Female	B	vaginal	367	77	N	NO	0.89
+813	9044	446	Center_b		TRUE	441	1	Female	B	vaginal	367	77	N	NO	0.94
+135	9051	159	Center_b	FALSE	FALSE	577	1	Male	A	vaginal	904	152	N	YES	
+213	9051	188	Center_b	FALSE	FALSE	577	1	Male	A	vaginal	904	152	N	YES	0
+278	9051	215	Center_b	FALSE	FALSE	577	1	Male	A	vaginal	904	152	N	YES	0.02
+448	9051	280	Center_b	FALSE	FALSE	577	1	Male	A	vaginal	904	152	N	YES	0.84
+530	9051	314	Center_b	FALSE	FALSE	577	1	Male	A	vaginal	904	152	N	YES	0.96
+602	9051	344	Center_b	FALSE	FALSE	577	1	Male	A	vaginal	904	152	N	YES	0.95
+671	9051	373	Center_b	FALSE	FALSE	577	1	Male	A	vaginal	904	152	N	YES	0.86
+723	9051	404	Center_b	FALSE	FALSE	577	1	Male	A	vaginal	904	152	N	YES	0.9
+792	9051	434	Center_b	FALSE	FALSE	577	1	Male	A	vaginal	904	152	N	YES	0.99
+864	9051	468	Center_b	FALSE	FALSE	577	1	Male	A	vaginal	904	152	N	YES	0.99
+920	9051	496	Center_b	FALSE	FALSE	577	1	Male	A	vaginal	904	152	N	YES	0.99
+967	9051	523	Center_b	FALSE	FALSE	577	1	Male	A	vaginal	904	152	N	YES	0.99
+64	9046	131	Center_b	FALSE	FALSE	659	1	Male	A	c_section	235	137	N	YES	
+146	9046	163	Center_b	FALSE	FALSE	659	1	Male	A	c_section	235	137	N	YES	0.27
+230	9046	193	Center_b	FALSE	FALSE	659	1	Male	A	c_section	235	137	N	YES	0.17
+268	9046	213	Center_b	FALSE	FALSE	659	1	Male	A	c_section	235	137	N	YES	0.78
+385	9046	256	Center_b	FALSE	FALSE	659	1	Male	A	c_section	235	137	N	YES	0.16
+538	9046	316	Center_b	FALSE	FALSE	659	1	Male	A	c_section	235	137	N	YES	0.53
+670	9046	372	Center_b	FALSE	FALSE	659	1	Male	A	c_section	235	137	N	YES	0.36
+722	9046	404	Center_b	FALSE	FALSE	659	1	Male	A	c_section	235	137	N	YES	0.4
+804	9046	436	Center_b	FALSE	FALSE	659	1	Male	A	c_section	235	137	N	YES	0.42
+833	9046	457	Center_b	FALSE	FALSE	659	1	Male	A	c_section	235	137	N	YES	0.57
+912	9046	494	Center_b	FALSE	FALSE	659	1	Male	A	c_section	235	137	N	YES	0.53
+978	9046	528	Center_b	FALSE	FALSE	659	1	Male	A	c_section	235	137	N	YES	0.57
+6	9041	99	Center_b	FALSE	FALSE	379	1	Female	A	c_section	231	152	N	NO	
+59	9041	130	Center_b	FALSE	FALSE	379	1	Female	A	c_section	231	152	N	NO	0.42
+235	9041	198	Center_b	FALSE	FALSE	379	1	Female	A	c_section	231	152	N	NO	0.28
+324	9041	235	Center_b	FALSE	FALSE	379	1	Female	A	c_section	231	152	N	NO	0.53
+393	9041	261	Center_b	FALSE	FALSE	379	1	Female	A	c_section	231	152	N	NO	0.84
+476	9041	296	Center_b	FALSE	FALSE	379	1	Female	A	c_section	231	152	N	NO	0.92
+559	9041	330	Center_b	FALSE	FALSE	379	1	Female	A	c_section	231	152	N	NO	0.79
+682	9041	379	Center_b	TRUE	FALSE	379	1	Female	A	c_section	231	152	N	NO	0.78
+743	9041	415	Center_b	TRUE	FALSE	379	1	Female	A	c_section	231	152	N	NO	0.8
+867	9041	471	Center_b	TRUE	FALSE	379	1	Female	A	c_section	231	152	N	NO	0.89
+948	9041	513	Center_b	TRUE	FALSE	379	1	Female	A	c_section	231	152	N	NO	0.88
+72	9092	134	Center_d	FALSE	FALSE	679	1	Male	B	vaginal	369	198	N	NO	
+139	9092	161	Center_d	FALSE	FALSE	679	1	Male	B	vaginal	369	198	N	NO	0.42
+186	9092	183	Center_d	FALSE	FALSE	679	1	Male	B	vaginal	369	198	N	NO	0.49
+256	9092	210	Center_d	FALSE	FALSE	679	1	Male	B	vaginal	369	198	N	NO	0.19
+355	9092	247	Center_d	FALSE	FALSE	679	1	Male	B	vaginal	369	198	N	NO	0.53
+404	9092	268	Center_d	FALSE	FALSE	679	1	Male	B	vaginal	369	198	N	NO	0.37
+506	9092	308	Center_d	FALSE	FALSE	679	1	Male	B	vaginal	369	198	N	NO	0.74
+573	9092	337	Center_d	FALSE	FALSE	679	1	Male	B	vaginal	369	198	N	NO	0.74
+681	9092	380	Center_d	FALSE	FALSE	679	1	Male	B	vaginal	369	198	N	NO	0.85
+733	9092	409	Center_d	FALSE	FALSE	679	1	Male	B	vaginal	369	198	N	NO	0.76
+797	9092	434	Center_d	FALSE	FALSE	679	1	Male	B	vaginal	369	198	N	NO	0.73
+868	9092	471	Center_d	FALSE	FALSE	679	1	Male	B	vaginal	369	198	N	NO	0.86
+927	9092	499	Center_d	FALSE	FALSE	679	1	Male	B	vaginal	369	198	N	NO	0.79
+32	9058	119	Center_e	FALSE	FALSE	447	1	Female	A	c_section	59	122	N	YES	
+107	9058	153	Center_e	FALSE	FALSE	447	1	Female	A	c_section	59	122	N	YES	0.22
+181	9058	182	Center_e	FALSE	FALSE	447	1	Female	A	c_section	59	122	N	YES	0.39
+413	9058	272	Center_e	FALSE	FALSE	447	1	Female	A	c_section	59	122	N	YES	0.46
+488	9058	304	Center_e	FALSE	FALSE	447	1	Female	A	c_section	59	122	N	YES	0.54
+565	9058	335	Center_e	FALSE	FALSE	447	1	Female	A	c_section	59	122	N	YES	0.58
+661	9058	370	Center_e	FALSE	FALSE	447	1	Female	A	c_section	59	122	N	YES	0.65
+721	9058	403	Center_e	FALSE	FALSE	447	1	Female	A	c_section	59	122	N	YES	0.83
+805	9058	437	Center_e	FALSE	FALSE	447	1	Female	A	c_section	59	122	N	YES	0.85
+807	9058	445	Center_e	TRUE	FALSE	447	1	Female	A	c_section	59	122	N	YES	0.86
+888	9058	486	Center_e	TRUE	FALSE	447	1	Female	A	c_section	59	122	N	YES	0.73
+236	9064	198	Center_b	FALSE	FALSE	465	1	Female	A	vaginal	320	183	N	NO	
+312	9064	226	Center_b	FALSE	FALSE	465	1	Female	A	vaginal	320	183	N	NO	0.24
+390	9064	260	Center_b	FALSE	FALSE	465	1	Female	A	vaginal	320	183	N	NO	0.71
+455	9064	284	Center_b	FALSE	FALSE	465	1	Female	A	vaginal	320	183	N	NO	0.76
+539	9064	317	Center_b	FALSE	FALSE	465	1	Female	A	vaginal	320	183	N	NO	0.75
+668	9064	372	Center_b	FALSE	FALSE	465	1	Female	A	vaginal	320	183	N	NO	0.91
+860	9064	465	Center_b	TRUE	FALSE	465	1	Female	A	vaginal	320	183	N	NO	0.78
+940	9064	507	Center_b	TRUE	FALSE	465	1	Female	A	vaginal	320	183	N	NO	0.67
+8	9076	98	Center_b	FALSE	FALSE	459	1	Male	C	vaginal	26	183	N	NO	
+60	9076	130	Center_b	FALSE	FALSE	459	1	Male	C	vaginal	26	183	N	NO	0.07
+124	9076	156	Center_b	FALSE	FALSE	459	1	Male	C	vaginal	26	183	N	NO	0.04
+202	9076	185	Center_b	FALSE	FALSE	459	1	Male	C	vaginal	26	183	N	NO	0.07
+291	9076	218	Center_b	FALSE	FALSE	459	1	Male	C	vaginal	26	183	N	NO	0.07
+357	9076	247	Center_b	FALSE	FALSE	459	1	Male	C	vaginal	26	183	N	NO	0.07
+425	9076	275	Center_b	FALSE	FALSE	459	1	Male	C	vaginal	26	183	N	NO	0.34
+509	9076	308	Center_b	FALSE	FALSE	459	1	Male	C	vaginal	26	183	N	NO	0.37
+575	9076	337	Center_b	FALSE	FALSE	459	1	Male	C	vaginal	26	183	N	NO	0.41
+651	9076	366	Center_b	FALSE	FALSE	459	1	Male	C	vaginal	26	183	N	NO	0.7
+713	9076	400	Center_b	FALSE	FALSE	459	1	Male	C	vaginal	26	183	N	NO	0.61
+758	9076	422	Center_b	FALSE	FALSE	459	1	Male	C	vaginal	26	183	N	NO	0.45
+857	9076	464	Center_b	TRUE	FALSE	459	1	Male	C	vaginal	26	183	N	NO	0.87
+902	9076	492	Center_b	TRUE	FALSE	459	1	Male	C	vaginal	26	183	N	NO	0.88
+957	9076	519	Center_b	TRUE	FALSE	459	1	Male	C	vaginal	26	183	N	NO	0.88
+61	9027	129	Center_b	FALSE	FALSE	481	1	Male	C	vaginal	31	84	N	NO	
+226	9027	191	Center_b	FALSE	FALSE	481	1	Male	C	vaginal	31	84	N	NO	0.66
+292	9027	218	Center_b	FALSE	FALSE	481	1	Male	C	vaginal	31	84	N	NO	0.91
+658	9027	369	Center_b	FALSE	FALSE	481	1	Male	C	vaginal	31	84	N	NO	0.92
+842	9027	458	Center_b	FALSE	FALSE	481	1	Male	C	vaginal	31	84	N	NO	0.97
+993	9027	536	Center_b	TRUE	FALSE	481	1	Male	C	vaginal	31	84	N	NO	0.95
+54	9052	127	Center_e	FALSE		757	1	Male	C	c_section	33	122	N	NO	
+91	9052	146	Center_e	FALSE		757	1	Male	C	c_section	33	122	N	NO	0.24
+170	9052	176	Center_e	FALSE		757	1	Male	C	c_section	33	122	N	NO	0.3
+305	9052	224	Center_e	FALSE		757	1	Male	C	c_section	33	122	N	NO	0.51
+403	9052	266	Center_e	FALSE		757	1	Male	C	c_section	33	122	N	NO	0.66
+479	9052	299	Center_e	FALSE		757	1	Male	C	c_section	33	122	N	NO	0.93
+553	9052	328	Center_e	FALSE		757	1	Male	C	c_section	33	122	N	NO	0.75
+627	9052	359	Center_e	FALSE		757	1	Male	C	c_section	33	122	N	NO	0.84
+879	9052	482	Center_e	FALSE		757	1	Male	C	c_section	33	122	N	NO	0.68
+35	9029	120	Center_e	FALSE		458	1	Male	C	vaginal	306	137	Y	NO	
+188	9029	183	Center_e	FALSE		458	1	Male	C	vaginal	306	137	Y	NO	0.22
+310	9029	226	Center_e	FALSE		458	1	Male	C	vaginal	306	137	Y	NO	0.54
+406	9029	267	Center_e	FALSE		458	1	Male	C	vaginal	306	137	Y	NO	0.5
+586	9029	337	Center_e	FALSE		458	1	Male	C	vaginal	306	137	Y	NO	0.88
+659	9029	369	Center_e	FALSE		458	1	Male	C	vaginal	306	137	Y	NO	0.89
+746	9029	415	Center_e	FALSE		458	1	Male	C	vaginal	306	137	Y	NO	0.83
+826	9029	453	Center_e	TRUE		458	1	Male	C	vaginal	306	137	Y	NO	0.64
+5	9082	97	Center_d	FALSE		866	1	Male	C	vaginal	120	122	Y	YES	
+67	9082	131	Center_d	FALSE		866	1	Male	C	vaginal	120	122	Y	YES	0.35
+157	9082	167	Center_d	FALSE		866	1	Male	C	vaginal	120	122	Y	YES	0.89
+214	9082	187	Center_d	FALSE		866	1	Male	C	vaginal	120	122	Y	YES	0.3
+261	9082	210	Center_d	FALSE		866	1	Male	C	vaginal	120	122	Y	YES	0.72
+463	9082	287	Center_d	FALSE		866	1	Male	C	vaginal	120	122	Y	YES	0.76
+536	9082	316	Center_d	FALSE		866	1	Male	C	vaginal	120	122	Y	YES	0.83
+584	9082	337	Center_d	FALSE		866	1	Male	C	vaginal	120	122	Y	YES	0.88
+638	9082	363	Center_d	FALSE		866	1	Male	C	vaginal	120	122	Y	YES	0.87
+729	9082	405	Center_d	FALSE		866	1	Male	C	vaginal	120	122	Y	YES	0.95
+799	9082	434	Center_d	FALSE		866	1	Male	C	vaginal	120	122	Y	YES	0.92
+831	9082	455	Center_d	FALSE		866	1	Male	C	vaginal	120	122	Y	YES	0.93
+937	9082	503	Center_d	FALSE		866	1	Male	C	vaginal	120	122	Y	YES	0.96
+972	9082	525	Center_d	FALSE		866	1	Male	C	vaginal	120	122	Y	YES	0.91
+1	9016	83	Center_f	FALSE		747	1	Male	B	vaginal	581	122	N	YES	
+44	9016	124	Center_f	FALSE		747	1	Male	B	vaginal	581	122	N	YES	0.17
+138	9016	159	Center_f	FALSE		747	1	Male	B	vaginal	581	122	N	YES	0.22
+231	9016	193	Center_f	FALSE		747	1	Male	B	vaginal	581	122	N	YES	0.68
+300	9016	221	Center_f	FALSE		747	1	Male	B	vaginal	581	122	N	YES	0.74
+371	9016	251	Center_f	FALSE		747	1	Male	B	vaginal	581	122	N	YES	0.51
+503	9016	306	Center_f	FALSE		747	1	Male	B	vaginal	581	122	N	YES	0.45
+609	9016	347	Center_f	FALSE		747	1	Male	B	vaginal	581	122	N	YES	0.46
+737	9016	411	Center_f	FALSE		747	1	Male	B	vaginal	581	122	N	YES	0.24
+913	9016	494	Center_f	FALSE		747	1	Male	B	vaginal	581	122	N	YES	0.69
+57	9045	127	Center_e	FALSE		1190	1	Male	A	vaginal	218	122	N	YES	
+127	9045	155	Center_e	FALSE		1190	1	Male	A	vaginal	218	122	N	YES	0.09
+293	9045	219	Center_e	FALSE		1190	1	Male	A	vaginal	218	122	N	YES	0.59
+369	9045	250	Center_e	FALSE		1190	1	Male	A	vaginal	218	122	N	YES	0.49
+439	9045	279	Center_e	FALSE		1190	1	Male	A	vaginal	218	122	N	YES	0.85
+653	9045	366	Center_e	FALSE		1190	1	Male	A	vaginal	218	122	N	YES	0.94
+731	9045	407	Center_e	FALSE		1190	1	Male	A	vaginal	218	122	N	YES	0.96
+790	9045	432	Center_e	FALSE		1190	1	Male	A	vaginal	218	122	N	YES	0.98
+906	9045	493	Center_e	FALSE		1190	1	Male	A	vaginal	218	122	N	YES	0.9
+981	9045	530	Center_e	FALSE		1190	1	Male	A	vaginal	218	122	N	YES	0.93
+26	9091	116	Center_b	FALSE		869	1	Male	B	vaginal	245	122	N	YES	
+86	9091	143	Center_b	FALSE		869	1	Male	B	vaginal	245	122	N	YES	0.44
+162	9091	173	Center_b	FALSE		869	1	Male	B	vaginal	245	122	N	YES	0.69
+301	9091	223	Center_b	FALSE		869	1	Male	B	vaginal	245	122	N	YES	0.72
+408	9091	271	Center_b	FALSE		869	1	Male	B	vaginal	245	122	N	YES	0.9
+568	9091	335	Center_b	FALSE		869	1	Male	B	vaginal	245	122	N	YES	0.76
+683	9091	380	Center_b	FALSE		869	1	Male	B	vaginal	245	122	N	YES	0.82
+764	9091	425	Center_b	FALSE		869	1	Male	B	vaginal	245	122	N	YES	0.78
+843	9091	460	Center_b	FALSE		869	1	Male	B	vaginal	245	122	N	YES	0.92
+931	9091	500	Center_b	FALSE		869	1	Male	B	vaginal	245	122	N	YES	0.95
+1003	9091	543	Center_b	FALSE		869	1	Male	B	vaginal	245	122	N	YES	0.84
+41	9056	123	Center_e	FALSE		1009	1	Male	B	vaginal	11	152	N	NO	
+106	9056	152	Center_e	FALSE		1009	1	Male	B	vaginal	11	152	N	NO	0.43
+212	9056	187	Center_e	FALSE		1009	1	Male	B	vaginal	11	152	N	NO	0.7
+251	9056	209	Center_e	FALSE		1009	1	Male	B	vaginal	11	152	N	NO	0.69
+323	9056	235	Center_e	FALSE		1009	1	Male	B	vaginal	11	152	N	NO	0.96
+395	9056	262	Center_e	FALSE		1009	1	Male	B	vaginal	11	152	N	NO	0.78
+480	9056	300	Center_e	FALSE		1009	1	Male	B	vaginal	11	152	N	NO	0.99
+687	9056	382	Center_e	FALSE		1009	1	Male	B	vaginal	11	152	N	NO	0.99
+757	9056	422	Center_e	FALSE		1009	1	Male	B	vaginal	11	152	N	NO	0.98
+809	9056	444	Center_e	FALSE		1009	1	Male	B	vaginal	11	152	N	NO	0.97
+878	9056	482	Center_e	FALSE		1009	1	Male	B	vaginal	11	152	N	NO	0.87
+942	9056	509	Center_e	FALSE		1009	1	Male	B	vaginal	11	152	N	NO	0.9
+4	9066	98	Center_b	FALSE		824	1	Female	C	c_section	245	84	Y	NO	
+117	9066	154	Center_b	FALSE		824	1	Female	C	c_section	245	84	Y	NO	0.42
+290	9066	219	Center_b	FALSE		824	1	Female	C	c_section	245	84	Y	NO	0.93
+421	9066	273	Center_b	FALSE		824	1	Female	C	c_section	245	84	Y	NO	0.99
+512	9066	309	Center_b	FALSE		824	1	Female	C	c_section	245	84	Y	NO	0.75
+590	9066	338	Center_b	FALSE		824	1	Female	C	c_section	245	84	Y	NO	0.66
+645	9066	364	Center_b	FALSE		824	1	Female	C	c_section	245	84	Y	NO	0.71
+711	9066	400	Center_b	FALSE		824	1	Female	C	c_section	245	84	Y	NO	0.7
+771	9066	427	Center_b	FALSE		824	1	Female	C	c_section	245	84	Y	NO	0.77
+853	9066	463	Center_b	FALSE		824	1	Female	C	c_section	245	84	Y	NO	0.8
+887	9066	485	Center_b	FALSE		824	1	Female	C	c_section	245	84	Y	NO	0.83
+954	9066	518	Center_b	FALSE		824	1	Female	C	c_section	245	84	Y	NO	0.89
+3	9001	94	Center_a	FALSE		1812	1	Male	B	c_section	250	42	N	YES	
+46	9001	124	Center_a	FALSE		1812	1	Male	B	c_section	250	42	N	YES	0.77
+108	9001	152	Center_a	FALSE		1812	1	Male	B	c_section	250	42	N	YES	0.19
+243	9001	202	Center_a	FALSE		1812	1	Male	B	c_section	250	42	N	YES	0.97
+364	9001	249	Center_a	FALSE		1812	1	Male	B	c_section	250	42	N	YES	0.9
+457	9001	285	Center_a	FALSE		1812	1	Male	B	c_section	250	42	N	YES	0.88
+493	9001	305	Center_a	FALSE		1812	1	Male	B	c_section	250	42	N	YES	0.88
+594	9001	340	Center_a	FALSE		1812	1	Male	B	c_section	250	42	N	YES	0.93
+1002	9001	543	Center_a	FALSE		1812	1	Male	B	c_section	250	42	N	YES	0.91
+238	9099	198	Center_e	FALSE	FALSE	373	1	Male	C	vaginal	216	122	N	YES	
+327	9099	238	Center_e	FALSE	FALSE	373	1	Male	C	vaginal	216	122	N	YES	0.31
+391	9099	260	Center_e	FALSE	FALSE	373	1	Male	C	vaginal	216	122	N	YES	0.68
+477	9099	297	Center_e	FALSE	FALSE	373	1	Male	C	vaginal	216	122	N	YES	0.79
+625	9099	358	Center_e	FALSE	FALSE	373	1	Male	C	vaginal	216	122	N	YES	0.91
+702	9099	396	Center_e	TRUE	FALSE	373	1	Male	C	vaginal	216	122	N	YES	0.86
+759	9099	423	Center_e	TRUE	FALSE	373	1	Male	C	vaginal	216	122	N	YES	0.78
+808	9099	445	Center_e	TRUE	FALSE	373	1	Male	C	vaginal	216	122	N	YES	0.82
+970	9099	525	Center_e	TRUE	FALSE	373	1	Male	C	vaginal	216	122	N	YES	0.94
+15	9028	111	Center_e	FALSE		812	1	Male	C	vaginal	180	122	N	YES	
+271	9028	213	Center_e	FALSE		812	1	Male	C	vaginal	180	122	N	YES	0.35
+334	9028	242	Center_e	FALSE		812	1	Male	C	vaginal	180	122	N	YES	0.56
+431	9028	276	Center_e	FALSE		812	1	Male	C	vaginal	180	122	N	YES	0.63
+611	9028	348	Center_e	FALSE		812	1	Male	C	vaginal	180	122	N	YES	0.59
+639	9028	363	Center_e	FALSE		812	1	Male	C	vaginal	180	122	N	YES	0.76
+786	9028	431	Center_e	FALSE		812	1	Male	C	vaginal	180	122	N	YES	0.7
+845	9028	460	Center_e	FALSE		812	1	Male	C	vaginal	180	122	N	YES	0.73
+889	9028	485	Center_e	FALSE		812	1	Male	C	vaginal	180	122	N	YES	0.78
+962	9028	520	Center_e	FALSE		812	1	Male	C	vaginal	180	122	N	YES	0.72
+51	9031	125	Center_b	FALSE	FALSE	280	1	Female	A	vaginal	324	46	N	NO	
+141	9031	162	Center_b	FALSE	FALSE	280	1	Female	A	vaginal	324	46	N	NO	0.97
+216	9031	189	Center_b	FALSE	FALSE	280	1	Female	A	vaginal	324	46	N	NO	0.89
+286	9031	217	Center_b	FALSE	FALSE	280	1	Female	A	vaginal	324	46	N	NO	0.99
+346	9031	245	Center_b	FALSE	FALSE	280	1	Female	A	vaginal	324	46	N	NO	0.99
+440	9031	279	Center_b	FALSE	FALSE	280	1	Female	A	vaginal	324	46	N	NO	0.99
+555	9031	329	Center_b	TRUE	FALSE	280	1	Female	A	vaginal	324	46	N	NO	0.99
+58	9075	127	Center_d	FALSE		676	1	Female	C	vaginal	23	167	N	NO	
+152	9075	164	Center_d	FALSE		676	1	Female	C	vaginal	23	167	N	NO	0.05
+228	9075	193	Center_d	FALSE		676	1	Female	C	vaginal	23	167	N	NO	0.23
+295	9075	219	Center_d	FALSE		676	1	Female	C	vaginal	23	167	N	NO	0.18
+379	9075	253	Center_d	FALSE		676	1	Female	C	vaginal	23	167	N	NO	0.19
+453	9075	282	Center_d	FALSE		676	1	Female	C	vaginal	23	167	N	NO	0.16
+520	9075	309	Center_d	FALSE		676	1	Female	C	vaginal	23	167	N	NO	0.27
+583	9075	337	Center_d	FALSE		676	1	Female	C	vaginal	23	167	N	NO	0.91
+648	9075	364	Center_d	FALSE		676	1	Female	C	vaginal	23	167	N	NO	0.36
+718	9075	401	Center_d	FALSE		676	1	Female	C	vaginal	23	167	N	NO	0.78
+784	9075	431	Center_d	FALSE		676	1	Female	C	vaginal	23	167	N	NO	0.74
+854	9075	462	Center_d	FALSE		676	1	Female	C	vaginal	23	167	N	NO	0.46
+882	9075	485	Center_d	FALSE		676	1	Female	C	vaginal	23	167	N	NO	0.8
+979	9075	528	Center_d	FALSE		676	1	Female	C	vaginal	23	167	N	NO	0.57
+63	9067	131	Center_a	FALSE	FALSE	374	1	Female	A	vaginal	19	152	N	NO	
+150	9067	164	Center_a	FALSE	FALSE	374	1	Female	A	vaginal	19	152	N	NO	0.24
+229	9067	193	Center_a	FALSE	FALSE	374	1	Female	A	vaginal	19	152	N	NO	0.3
+302	9067	222	Center_a	FALSE	FALSE	374	1	Female	A	vaginal	19	152	N	NO	0.33
+383	9067	255	Center_a	FALSE	FALSE	374	1	Female	A	vaginal	19	152	N	NO	0.49
+458	9067	285	Center_a	FALSE	FALSE	374	1	Female	A	vaginal	19	152	N	NO	0.71
+540	9067	317	Center_a	FALSE	FALSE	374	1	Female	A	vaginal	19	152	N	NO	0.82
+615	9067	349	Center_a	FALSE	FALSE	374	1	Female	A	vaginal	19	152	N	NO	0.85
+751	9067	419	Center_a	TRUE	FALSE	374	1	Female	A	vaginal	19	152	N	NO	0.97
+885	9067	484	Center_a	TRUE	FALSE	374	1	Female	A	vaginal	19	152	N	NO	0.8
+977	9067	527	Center_a	TRUE	FALSE	374	1	Female	A	vaginal	19	152	N	NO	0.87
+1014	9067	549	Center_a	TRUE	FALSE	374	1	Female	A	vaginal	19	152	N	NO	0.9
+33	9083	119	Center_c	FALSE		682	1	Male	C	vaginal	362	122	N	NO	
+96	9083	147	Center_c	FALSE		682	1	Male	C	vaginal	362	122	N	NO	0.31
+233	9083	197	Center_c	FALSE		682	1	Male	C	vaginal	362	122	N	NO	0.31
+319	9083	231	Center_c	FALSE		682	1	Male	C	vaginal	362	122	N	NO	0.2
+518	9083	309	Center_c	FALSE		682	1	Male	C	vaginal	362	122	N	NO	0.34
+698	9083	392	Center_c	FALSE		682	1	Male	C	vaginal	362	122	N	NO	0.79
+800	9083	435	Center_c	FALSE		682	1	Male	C	vaginal	362	122	N	NO	0.88
+987	9083	532	Center_c	FALSE		682	1	Male	C	vaginal	362	122	N	NO	0.92
+2	9069	86	Center_d	FALSE		1220	1	Female	B	vaginal	398	183	N	NO	
+19	9069	112	Center_d	FALSE		1220	1	Female	B	vaginal	398	183	N	NO	0.92
+145	9069	162	Center_d	FALSE		1220	1	Female	B	vaginal	398	183	N	NO	0.92
+217	9069	189	Center_d	FALSE		1220	1	Female	B	vaginal	398	183	N	NO	0.98
+304	9069	223	Center_d	FALSE		1220	1	Female	B	vaginal	398	183	N	NO	0.95
+380	9069	254	Center_d	FALSE		1220	1	Female	B	vaginal	398	183	N	NO	0.95
+450	9069	281	Center_d	FALSE		1220	1	Female	B	vaginal	398	183	N	NO	0.97
+532	9069	315	Center_d	FALSE		1220	1	Female	B	vaginal	398	183	N	NO	0.99
+613	9069	350	Center_d	FALSE		1220	1	Female	B	vaginal	398	183	N	NO	0.93
+677	9069	377	Center_d	FALSE		1220	1	Female	B	vaginal	398	183	N	NO	0.95
+730	9069	407	Center_d	FALSE		1220	1	Female	B	vaginal	398	183	N	NO	0.95
+769	9069	426	Center_d	FALSE		1220	1	Female	B	vaginal	398	183	N	NO	0.95
+862	9069	469	Center_d	FALSE		1220	1	Female	B	vaginal	398	183	N	NO	0.95
+918	9069	495	Center_d	FALSE		1220	1	Female	B	vaginal	398	183	N	NO	0.95
+984	9069	533	Center_d	FALSE		1220	1	Female	B	vaginal	398	183	N	NO	0.92
+69	9048	133	Center_e	FALSE	FALSE	558	1	Male	C	vaginal	11	112	Y	NO	
+113	9048	153	Center_e	FALSE	FALSE	558	1	Male	C	vaginal	11	112	Y	NO	0.26
+179	9048	180	Center_e	FALSE	FALSE	558	1	Male	C	vaginal	11	112	Y	NO	0.25
+276	9048	216	Center_e	FALSE	FALSE	558	1	Male	C	vaginal	11	112	Y	NO	0.14
+370	9048	251	Center_e	FALSE	FALSE	558	1	Male	C	vaginal	11	112	Y	NO	0.49
+434	9048	277	Center_e	FALSE	FALSE	558	1	Male	C	vaginal	11	112	Y	NO	0.62
+494	9048	306	Center_e	FALSE	FALSE	558	1	Male	C	vaginal	11	112	Y	NO	0.74
+600	9048	343	Center_e	FALSE	FALSE	558	1	Male	C	vaginal	11	112	Y	NO	0.84
+680	9048	379	Center_e	FALSE	FALSE	558	1	Male	C	vaginal	11	112	Y	NO	0.93
+705	9048	397	Center_e	FALSE	FALSE	558	1	Male	C	vaginal	11	112	Y	NO	0.78
+749	9048	419	Center_e	FALSE	FALSE	558	1	Male	C	vaginal	11	112	Y	NO	0.85
+852	9048	463	Center_e	FALSE	FALSE	558	1	Male	C	vaginal	11	112	Y	NO	0.83
+958	9048	520	Center_e	FALSE	FALSE	558	1	Male	C	vaginal	11	112	Y	NO	0.64
+73	9015	134	Center_d	FALSE		1149	1	Male	B	vaginal	551	183	Y	NO	
+159	9015	169	Center_d	FALSE		1149	1	Male	B	vaginal	551	183	Y	NO	0.39
+225	9015	191	Center_d	FALSE		1149	1	Male	B	vaginal	551	183	Y	NO	0.71
+308	9015	225	Center_d	FALSE		1149	1	Male	B	vaginal	551	183	Y	NO	0.75
+377	9015	253	Center_d	FALSE		1149	1	Male	B	vaginal	551	183	Y	NO	0.82
+468	9015	290	Center_d	FALSE		1149	1	Male	B	vaginal	551	183	Y	NO	0.55
+504	9015	306	Center_d	FALSE		1149	1	Male	B	vaginal	551	183	Y	NO	0.69
+697	9015	393	Center_d	FALSE		1149	1	Male	B	vaginal	551	183	Y	NO	0.93
+802	9015	435	Center_d	FALSE		1149	1	Male	B	vaginal	551	183	Y	NO	0.82
+858	9015	463	Center_d	FALSE		1149	1	Male	B	vaginal	551	183	Y	NO	0.9
+924	9015	496	Center_d	FALSE		1149	1	Male	B	vaginal	551	183	Y	NO	0.81
+48	9078	124	Center_f	FALSE		678	1	Male	C	c_section	281	152	N	NO	
+122	9078	154	Center_f	FALSE		678	1	Male	C	c_section	281	152	N	NO	0.08
+187	9078	182	Center_f	FALSE		678	1	Male	C	c_section	281	152	N	NO	0.55
+249	9078	208	Center_f	FALSE		678	1	Male	C	c_section	281	152	N	NO	0.61
+348	9078	245	Center_f	FALSE		678	1	Male	C	c_section	281	152	N	NO	0.26
+411	9078	270	Center_f	FALSE		678	1	Male	C	c_section	281	152	N	NO	0.56
+543	9078	319	Center_f	FALSE		678	1	Male	C	c_section	281	152	N	NO	0.84
+605	9078	344	Center_f	FALSE		678	1	Male	C	c_section	281	152	N	NO	0.85
+629	9078	359	Center_f	FALSE		678	1	Male	C	c_section	281	152	N	NO	0.58
+690	9078	389	Center_f	FALSE		678	1	Male	C	c_section	281	152	N	NO	0.76
+763	9078	423	Center_f	FALSE		678	1	Male	C	c_section	281	152	N	NO	0.42
+819	9078	452	Center_f	FALSE		678	1	Male	C	c_section	281	152	N	NO	0.46
+893	9078	487	Center_f	FALSE		678	1	Male	C	c_section	281	152	N	NO	0.43
+980	9078	527	Center_f	FALSE		678	1	Male	C	c_section	281	152	N	NO	0.5
+7	9019	98	Center_b	FALSE	FALSE	289	1	Female	C	vaginal	309	107	N	NO	
+52	9019	125	Center_b	FALSE	FALSE	289	1	Female	C	vaginal	309	107	N	NO	0.56
+143	9019	162	Center_b	FALSE	FALSE	289	1	Female	C	vaginal	309	107	N	NO	0.45
+223	9019	190	Center_b	FALSE	FALSE	289	1	Female	C	vaginal	309	107	N	NO	0.35
+303	9019	223	Center_b	FALSE	FALSE	289	1	Female	C	vaginal	309	107	N	NO	0.33
+375	9019	251	Center_b	FALSE	FALSE	289	1	Female	C	vaginal	309	107	N	NO	0.59
+462	9019	287	Center_b	TRUE	FALSE	289	1	Female	C	vaginal	309	107	N	NO	0.43
+515	9019	310	Center_b	TRUE	FALSE	289	1	Female	C	vaginal	309	107	N	NO	0.18
+596	9019	343	Center_b	TRUE	FALSE	289	1	Female	C	vaginal	309	107	N	NO	0.47
+709	9019	398	Center_b	TRUE	FALSE	289	1	Female	C	vaginal	309	107	N	NO	0.57
+814	9019	447	Center_b	TRUE	FALSE	289	1	Female	C	vaginal	309	107	N	NO	0.79
+899	9019	491	Center_b	TRUE	FALSE	289	1	Female	C	vaginal	309	107	N	NO	0.68
+53	9071	126	Center_e	FALSE		842	1	Male	B	vaginal	277	122	N	NO	
+123	9071	155	Center_e	FALSE		842	1	Male	B	vaginal	277	122	N	NO	0.33
+183	9071	182	Center_e	FALSE		842	1	Male	B	vaginal	277	122	N	NO	0.3
+282	9071	216	Center_e	FALSE		842	1	Male	B	vaginal	277	122	N	NO	0.36
+338	9071	244	Center_e	FALSE		842	1	Male	B	vaginal	277	122	N	NO	0.52
+414	9071	271	Center_e	FALSE		842	1	Male	B	vaginal	277	122	N	NO	0.58
+500	9071	306	Center_e	FALSE		842	1	Male	B	vaginal	277	122	N	NO	0.65
+580	9071	338	Center_e	FALSE		842	1	Male	B	vaginal	277	122	N	NO	0.77
+666	9071	372	Center_e	FALSE		842	1	Male	B	vaginal	277	122	N	NO	0.52
+724	9071	404	Center_e	FALSE		842	1	Male	B	vaginal	277	122	N	NO	0.6
+791	9071	433	Center_e	FALSE		842	1	Male	B	vaginal	277	122	N	NO	0.48
+827	9071	456	Center_e	FALSE		842	1	Male	B	vaginal	277	122	N	NO	0.48
+917	9071	495	Center_e	FALSE		842	1	Male	B	vaginal	277	122	N	NO	0.55
+969	9071	525	Center_e	FALSE		842	1	Male	B	vaginal	277	122	N	NO	0.5
+84	9026	143	Center_e	FALSE		1139	1	Female	C	vaginal	289	14	Y	NO	
+200	9026	184	Center_e	FALSE		1139	1	Female	C	vaginal	289	14	Y	NO	0.46
+245	9026	206	Center_e	FALSE		1139	1	Female	C	vaginal	289	14	Y	NO	0.61
+331	9026	240	Center_e	FALSE		1139	1	Female	C	vaginal	289	14	Y	NO	0.55
+410	9026	271	Center_e	FALSE		1139	1	Female	C	vaginal	289	14	Y	NO	0.82
+491	9026	305	Center_e	FALSE		1139	1	Female	C	vaginal	289	14	Y	NO	0.77
+560	9026	330	Center_e	FALSE		1139	1	Female	C	vaginal	289	14	Y	NO	0.8
+630	9026	359	Center_e	FALSE		1139	1	Female	C	vaginal	289	14	Y	NO	0.91
+738	9026	412	Center_e	FALSE		1139	1	Female	C	vaginal	289	14	Y	NO	0.9
+812	9026	446	Center_e	FALSE		1139	1	Female	C	vaginal	289	14	Y	NO	0.85
+916	9026	495	Center_e	FALSE		1139	1	Female	C	vaginal	289	14	Y	NO	1
+950	9026	513	Center_e	FALSE		1139	1	Female	C	vaginal	289	14	Y	NO	0.92
+112	9097	154	Center_e	FALSE		1189	1	Male	C	vaginal	245	122	N	YES	
+194	9097	183	Center_e	FALSE		1189	1	Male	C	vaginal	245	122	N	YES	0.95
+306	9097	225	Center_e	FALSE		1189	1	Male	C	vaginal	245	122	N	YES	0.95
+362	9097	249	Center_e	FALSE		1189	1	Male	C	vaginal	245	122	N	YES	0.95
+420	9097	274	Center_e	FALSE		1189	1	Male	C	vaginal	245	122	N	YES	0.97
+522	9097	310	Center_e	FALSE		1189	1	Male	C	vaginal	245	122	N	YES	0.79
+589	9097	338	Center_e	FALSE		1189	1	Male	C	vaginal	245	122	N	YES	0.94
+647	9097	364	Center_e	FALSE		1189	1	Male	C	vaginal	245	122	N	YES	0.98
+727	9097	405	Center_e	FALSE		1189	1	Male	C	vaginal	245	122	N	YES	0.99
+778	9097	429	Center_e	FALSE		1189	1	Male	C	vaginal	245	122	N	YES	0.92
+851	9097	461	Center_e	FALSE		1189	1	Male	C	vaginal	245	122	N	YES	0.94
+921	9097	496	Center_e	FALSE		1189	1	Male	C	vaginal	245	122	N	YES	0.92
+999	9097	540	Center_e	FALSE		1189	1	Male	C	vaginal	245	122	N	YES	0.98
+9	9084	103	Center_f	FALSE		864	1	Male	A	vaginal	286	137	N	NO	
+129	9084	158	Center_f	FALSE		864	1	Male	A	vaginal	286	137	N	NO	0.6
+197	9084	185	Center_f	FALSE		864	1	Male	A	vaginal	286	137	N	NO	0.74
+262	9084	211	Center_f	FALSE		864	1	Male	A	vaginal	286	137	N	NO	0.78
+435	9084	278	Center_f	FALSE		864	1	Male	A	vaginal	286	137	N	NO	0.89
+489	9084	305	Center_f	FALSE		864	1	Male	A	vaginal	286	137	N	NO	0.86
+619	9084	352	Center_f	FALSE		864	1	Male	A	vaginal	286	137	N	NO	0.91
+734	9084	409	Center_f	FALSE		864	1	Male	A	vaginal	286	137	N	NO	0.91
+965	9084	523	Center_f	FALSE		864	1	Male	A	vaginal	286	137	N	NO	0.91
+49	9062	124	Center_b	FALSE	FALSE	589	1	Male	B	vaginal	665	0.5	N	NO	
+92	9062	145	Center_b	FALSE	FALSE	589	1	Male	B	vaginal	665	0.5	N	NO	0.24
+218	9062	188	Center_b	FALSE	FALSE	589	1	Male	B	vaginal	665	0.5	N	NO	0.73
+279	9062	215	Center_b	FALSE	FALSE	589	1	Male	B	vaginal	665	0.5	N	NO	0.81
+340	9062	243	Center_b	FALSE	FALSE	589	1	Male	B	vaginal	665	0.5	N	NO	0.73
+417	9062	272	Center_b	FALSE	FALSE	589	1	Male	B	vaginal	665	0.5	N	NO	0.65
+595	9062	341	Center_b	FALSE	FALSE	589	1	Male	B	vaginal	665	0.5	N	NO	0.67
+664	9062	370	Center_b	FALSE	FALSE	589	1	Male	B	vaginal	665	0.5	N	NO	0.69
+707	9062	397	Center_b	FALSE	FALSE	589	1	Male	B	vaginal	665	0.5	N	NO	0.58
+766	9062	426	Center_b	FALSE	FALSE	589	1	Male	B	vaginal	665	0.5	N	NO	0.62
+850	9062	461	Center_b	FALSE	FALSE	589	1	Male	B	vaginal	665	0.5	N	NO	0.56
+894	9062	489	Center_b	FALSE	FALSE	589	1	Male	B	vaginal	665	0.5	N	NO	0.64
+943	9062	510	Center_b	FALSE	FALSE	589	1	Male	B	vaginal	665	0.5	N	NO	0.56
+1007	9062	545	Center_b	FALSE	FALSE	589	1	Male	B	vaginal	665	0.5	N	NO	0.68
+18	9050	111	Center_a	FALSE		279	1	Male	A	c_section	409	167	Y	NO	
+115	9050	153	Center_a	FALSE		279	1	Male	A	c_section	409	167	Y	NO	0.05
+203	9050	186	Center_a	FALSE		279	1	Male	A	c_section	409	167	Y	NO	0.21
+275	9050	214	Center_a	FALSE		279	1	Male	A	c_section	409	167	Y	NO	0.27
+373	9050	251	Center_a	FALSE		279	1	Male	A	c_section	409	167	Y	NO	0.15
+433	9050	277	Center_a	TRUE		279	1	Male	A	c_section	409	167	Y	NO	0.59
+498	9050	305	Center_a	TRUE		279	1	Male	A	c_section	409	167	Y	NO	0.7
+24	9093	115	Center_b	FALSE	FALSE	368	1	Male	C	vaginal	75	84	Y	NO	
+93	9093	146	Center_b	FALSE	FALSE	368	1	Male	C	vaginal	75	84	Y	NO	0.65
+192	9093	184	Center_b	FALSE	FALSE	368	1	Male	C	vaginal	75	84	Y	NO	0.78
+264	9093	213	Center_b	FALSE	FALSE	368	1	Male	C	vaginal	75	84	Y	NO	0.92
+330	9093	241	Center_b	FALSE	FALSE	368	1	Male	C	vaginal	75	84	Y	NO	0.84
+419	9093	273	Center_b	FALSE	FALSE	368	1	Male	C	vaginal	75	84	Y	NO	0.92
+485	9093	304	Center_b	FALSE	FALSE	368	1	Male	C	vaginal	75	84	Y	NO	0.94
+554	9093	330	Center_b	FALSE	FALSE	368	1	Male	C	vaginal	75	84	Y	NO	0.91
+628	9093	358	Center_b	FALSE	FALSE	368	1	Male	C	vaginal	75	84	Y	NO	0.85
+695	9093	392	Center_b	TRUE	FALSE	368	1	Male	C	vaginal	75	84	Y	NO	0.9
+753	9093	420	Center_b	TRUE	FALSE	368	1	Male	C	vaginal	75	84	Y	NO	0.9
+836	9093	457	Center_b	TRUE	FALSE	368	1	Male	C	vaginal	75	84	Y	NO	0.89
+898	9093	490	Center_b	TRUE	FALSE	368	1	Male	C	vaginal	75	84	Y	NO	0.92
+1015	9093	549	Center_b	TRUE	FALSE	368	1	Male	C	vaginal	75	84	Y	NO	0.9
+38	9012	123	Center_e	FALSE		1380	1	Male	B	c_section	165	137	N	NO	
+161	9012	170	Center_e	FALSE		1380	1	Male	B	c_section	165	137	N	NO	0.49
+354	9012	248	Center_e	FALSE		1380	1	Male	B	c_section	165	137	N	NO	0.53
+469	9012	290	Center_e	FALSE		1380	1	Male	B	c_section	165	137	N	NO	0.62
+542	9012	319	Center_e	FALSE		1380	1	Male	B	c_section	165	137	N	NO	0.76
+684	9012	381	Center_e	FALSE		1380	1	Male	B	c_section	165	137	N	NO	0.77
+760	9012	422	Center_e	FALSE		1380	1	Male	B	c_section	165	137	N	NO	0.86
+870	9012	473	Center_e	FALSE		1380	1	Male	B	c_section	165	137	N	NO	0.81
+939	9012	506	Center_e	FALSE		1380	1	Male	B	c_section	165	137	N	NO	0.85
+110	9022	152	Center_e			589	0	Male	C	vaginal	194	98	N	NO	
+222	9022	190	Center_e			589	0	Male	C	vaginal	194	98	N	NO	0.84
+344	9022	245	Center_e			589	0	Male	C	vaginal	194	98	N	NO	0.93
+442	9022	280	Center_e			589	0	Male	C	vaginal	194	98	N	NO	0.81
+499	9022	306	Center_e			589	0	Male	C	vaginal	194	98	N	NO	0.95
+571	9022	335	Center_e			589	0	Male	C	vaginal	194	98	N	NO	0.92
+637	9022	361	Center_e			589	0	Male	C	vaginal	194	98	N	NO	0.92
+742	9022	413	Center_e			589	0	Male	C	vaginal	194	98	N	NO	0.37
+820	9022	451	Center_e			589	0	Male	C	vaginal	194	98	N	NO	0.24
+945	9022	510	Center_e			589	0	Male	C	vaginal	194	98	N	NO	0.72
+1010	9022	545	Center_e			589	0	Male	C	vaginal	194	98	N	NO	0.67
+10	9007	103	Center_d			841	0	Male	B	vaginal	291	183	Y	YES	
+40	9007	123	Center_d			841	0	Male	B	vaginal	291	183	Y	YES	0.98
+153	9007	165	Center_d			841	0	Male	B	vaginal	291	183	Y	YES	0.98
+207	9007	187	Center_d			841	0	Male	B	vaginal	291	183	Y	YES	0.99
+273	9007	215	Center_d			841	0	Male	B	vaginal	291	183	Y	YES	0.98
+367	9007	249	Center_d			841	0	Male	B	vaginal	291	183	Y	YES	0.99
+430	9007	277	Center_d			841	0	Male	B	vaginal	291	183	Y	YES	0.99
+526	9007	312	Center_d			841	0	Male	B	vaginal	291	183	Y	YES	0.99
+593	9007	340	Center_d			841	0	Male	B	vaginal	291	183	Y	YES	0.99
+654	9007	367	Center_d			841	0	Male	B	vaginal	291	183	Y	YES	0.99
+782	9007	430	Center_d			841	0	Male	B	vaginal	291	183	Y	YES	0.98
+848	9007	461	Center_d			841	0	Male	B	vaginal	291	183	Y	YES	0.98
+935	9007	502	Center_d			841	0	Male	B	vaginal	291	183	Y	YES	0.98
+952	9007	517	Center_d			841	0	Male	B	vaginal	291	183	Y	YES	0.99
+131	9068	158	Center_d			676	0	Female	A	vaginal	369	183	N	NO	
+198	9068	184	Center_d			676	0	Female	A	vaginal	369	183	N	NO	0.27
+299	9068	220	Center_d			676	0	Female	A	vaginal	369	183	N	NO	0.44
+381	9068	253	Center_d			676	0	Female	A	vaginal	369	183	N	NO	0.33
+471	9068	291	Center_d			676	0	Female	A	vaginal	369	183	N	NO	0.41
+607	9068	346	Center_d			676	0	Female	A	vaginal	369	183	N	NO	0.51
+636	9068	362	Center_d			676	0	Female	A	vaginal	369	183	N	NO	0.61
+689	9068	389	Center_d			676	0	Female	A	vaginal	369	183	N	NO	0.42
+785	9068	431	Center_d			676	0	Female	A	vaginal	369	183	N	NO	0.9
+821	9068	453	Center_d			676	0	Female	A	vaginal	369	183	N	NO	0.86
+909	9068	492	Center_d			676	0	Female	A	vaginal	369	183	N	NO	0.93
+71	9020	133	Center_a	FALSE		1310	1	Male	A	vaginal	383	122	N	NO	
+158	9020	168	Center_a	FALSE		1310	1	Male	A	vaginal	383	122	N	NO	0.04
+168	9020	176	Center_a	FALSE		1310	1	Male	A	vaginal	383	122	N	NO	0.16
+378	9020	252	Center_a	FALSE		1310	1	Male	A	vaginal	383	122	N	NO	0.48
+432	9020	276	Center_a	FALSE		1310	1	Male	A	vaginal	383	122	N	NO	0.58
+545	9020	321	Center_a	FALSE		1310	1	Male	A	vaginal	383	122	N	NO	0.54
+667	9020	372	Center_a	FALSE		1310	1	Male	A	vaginal	383	122	N	NO	0.76
+735	9020	409	Center_a	FALSE		1310	1	Male	A	vaginal	383	122	N	NO	0.85
+780	9020	430	Center_a	FALSE		1310	1	Male	A	vaginal	383	122	N	NO	0.99
+856	9020	462	Center_a	FALSE		1310	1	Male	A	vaginal	383	122	N	NO	0.94
+929	9020	499	Center_a	FALSE		1310	1	Male	A	vaginal	383	122	N	NO	0.98
+974	9020	527	Center_a	FALSE		1310	1	Male	A	vaginal	383	122	N	NO	0.98
+62	9095	130	Center_f		FALSE	1237	1	Male	B	c_section	79	84	Y	YES	
+130	9095	157	Center_f		FALSE	1237	1	Male	B	c_section	79	84	Y	YES	0.38
+257	9095	211	Center_f		FALSE	1237	1	Male	B	c_section	79	84	Y	YES	0.65
+358	9095	247	Center_f		FALSE	1237	1	Male	B	c_section	79	84	Y	YES	0.9
+508	9095	309	Center_f		FALSE	1237	1	Male	B	c_section	79	84	Y	YES	0.85
+576	9095	336	Center_f		FALSE	1237	1	Male	B	c_section	79	84	Y	YES	0.95
+672	9095	373	Center_f		FALSE	1237	1	Male	B	c_section	79	84	Y	YES	0.78
+712	9095	400	Center_f		FALSE	1237	1	Male	B	c_section	79	84	Y	YES	0.92
+777	9095	429	Center_f		FALSE	1237	1	Male	B	c_section	79	84	Y	YES	0.97
+828	9095	455	Center_f		FALSE	1237	1	Male	B	c_section	79	84	Y	YES	0.98
+901	9095	492	Center_f		FALSE	1237	1	Male	B	c_section	79	84	Y	YES	0.98
+955	9095	519	Center_f		FALSE	1237	1	Male	B	c_section	79	84	Y	YES	0.85
+83	9035	142	Center_b	FALSE		2024	1	Male	C	c_section	308	122	N	NO	
+193	9035	184	Center_b	FALSE		2024	1	Male	C	c_section	308	122	N	NO	0.59
+318	9035	231	Center_b	FALSE		2024	1	Male	C	c_section	308	122	N	NO	0.51
+392	9035	262	Center_b	FALSE		2024	1	Male	C	c_section	308	122	N	NO	0.49
+449	9035	282	Center_b	FALSE		2024	1	Male	C	c_section	308	122	N	NO	0.69
+616	9035	351	Center_b	FALSE		2024	1	Male	C	c_section	308	122	N	NO	0.53
+678	9035	377	Center_b	FALSE		2024	1	Male	C	c_section	308	122	N	NO	0.6
+990	9035	534	Center_b	FALSE		2024	1	Male	C	c_section	308	122	N	NO	0.72
+42	9034	124	Center_e			522	0	Male	C	vaginal	303	122	N	NO	
+219	9034	190	Center_e			522	0	Male	C	vaginal	303	122	N	NO	0.41
+368	9034	249	Center_e			522	0	Male	C	vaginal	303	122	N	NO	0.41
+444	9034	279	Center_e			522	0	Male	C	vaginal	303	122	N	NO	0.59
+587	9034	338	Center_e			522	0	Male	C	vaginal	303	122	N	NO	0.73
+773	9034	427	Center_e			522	0	Male	C	vaginal	303	122	N	NO	0.91
+905	9034	492	Center_e			522	0	Male	C	vaginal	303	122	N	NO	0.78
+966	9034	523	Center_e			522	0	Male	C	vaginal	303	122	N	NO	0.86
+20	9057	113	Center_f			350	0	Male	C	vaginal	364	152	N	YES	
+103	9057	151	Center_f			350	0	Male	C	vaginal	364	152	N	YES	0.15
+260	9057	211	Center_f			350	0	Male	C	vaginal	364	152	N	YES	0.85
+320	9057	231	Center_f			350	0	Male	C	vaginal	364	152	N	YES	0.78
+531	9057	313	Center_f			350	0	Male	C	vaginal	364	152	N	YES	0.68
+606	9057	346	Center_f			350	0	Male	C	vaginal	364	152	N	YES	0.66
+94	9072	146	Center_b			611	0	Female	A	vaginal	217	122	N	YES	
+165	9072	175	Center_b			611	0	Female	A	vaginal	217	122	N	YES	0.28
+244	9072	203	Center_b			611	0	Female	A	vaginal	217	122	N	YES	0.23
+386	9072	258	Center_b			611	0	Female	A	vaginal	217	122	N	YES	0.87
+872	9072	475	Center_b			611	0	Female	A	vaginal	217	122	N	YES	0.26
+116	9025	154	Center_c			1384	0	Male	A	vaginal	155	183	N	YES	
+227	9025	191	Center_c			1384	0	Male	A	vaginal	155	183	N	YES	0.36
+280	9025	217	Center_c			1384	0	Male	A	vaginal	155	183	N	YES	0.57
+356	9025	248	Center_c			1384	0	Male	A	vaginal	155	183	N	YES	0.75
+557	9025	331	Center_c			1384	0	Male	A	vaginal	155	183	N	YES	0.98
+646	9025	365	Center_c			1384	0	Male	A	vaginal	155	183	N	YES	0.86
+717	9025	401	Center_c			1384	0	Male	A	vaginal	155	183	N	YES	0.9
+991	9025	536	Center_c			1384	0	Male	A	vaginal	155	183	N	YES	0.91
+17	9089	111	Center_b	FALSE		736	1	Female	C	vaginal	336	152	N	NO	
+90	9089	145	Center_b	FALSE		736	1	Female	C	vaginal	336	152	N	NO	0.31
+177	9089	179	Center_b	FALSE		736	1	Female	C	vaginal	336	152	N	NO	0.83
+250	9089	208	Center_b	FALSE		736	1	Female	C	vaginal	336	152	N	NO	0.7
+365	9089	249	Center_b	FALSE		736	1	Female	C	vaginal	336	152	N	NO	0.74
+400	9089	264	Center_b	FALSE		736	1	Female	C	vaginal	336	152	N	NO	0.82
+496	9089	306	Center_b	FALSE		736	1	Female	C	vaginal	336	152	N	NO	0.75
+552	9089	327	Center_b	FALSE		736	1	Female	C	vaginal	336	152	N	NO	0.7
+622	9089	354	Center_b	FALSE		736	1	Female	C	vaginal	336	152	N	NO	0.4
+692	9089	391	Center_b	FALSE		736	1	Female	C	vaginal	336	152	N	NO	0.86
+752	9089	419	Center_b	FALSE		736	1	Female	C	vaginal	336	152	N	NO	0.86
+822	9089	453	Center_b	FALSE		736	1	Female	C	vaginal	336	152	N	NO	0.87
+875	9089	480	Center_b	FALSE		736	1	Female	C	vaginal	336	152	N	NO	0.88
+947	9089	510	Center_b	FALSE		736	1	Female	C	vaginal	336	152	N	NO	0.77
+211	9063	187	Center_d			1905	0	Male	B	vaginal	610	213	Y	NO	
+372	9063	250	Center_d			1905	0	Male	B	vaginal	610	213	Y	NO	0.31
+461	9063	287	Center_d			1905	0	Male	B	vaginal	610	213	Y	NO	0.48
+528	9063	313	Center_d			1905	0	Male	B	vaginal	610	213	Y	NO	0.71
+581	9063	338	Center_d			1905	0	Male	B	vaginal	610	213	Y	NO	0.84
+679	9063	377	Center_d			1905	0	Male	B	vaginal	610	213	Y	NO	0.96
+806	9063	441	Center_d			1905	0	Male	B	vaginal	610	213	Y	NO	0.83
+861	9063	469	Center_d			1905	0	Male	B	vaginal	610	213	Y	NO	0.88
+926	9063	498	Center_d			1905	0	Male	B	vaginal	610	213	Y	NO	0.95
+982	9063	532	Center_d			1905	0	Male	B	vaginal	610	213	Y	NO	0.84
+36	9037	121	Center_b			745	0	Female	C	vaginal	157	167	N	YES	
+164	9037	175	Center_b			745	0	Female	C	vaginal	157	167	N	YES	0.34
+258	9037	211	Center_b			745	0	Female	C	vaginal	157	167	N	YES	0.44
+473	9037	296	Center_b			745	0	Female	C	vaginal	157	167	N	YES	0.23
+597	9037	343	Center_b			745	0	Female	C	vaginal	157	167	N	YES	0.42
+693	9037	391	Center_b			745	0	Female	C	vaginal	157	167	N	YES	0.74
+756	9037	422	Center_b			745	0	Female	C	vaginal	157	167	N	YES	0.58
+815	9037	448	Center_b			745	0	Female	C	vaginal	157	167	N	YES	0.8
+871	9037	475	Center_b			745	0	Female	C	vaginal	157	167	N	YES	0.71
+985	9037	533	Center_b			745	0	Female	C	vaginal	157	167	N	YES	0.67
+12	9042	110	Center_e	FALSE		1039	1	Male	A	vaginal	64	122	N	YES	
+104	9042	151	Center_e	FALSE		1039	1	Male	A	vaginal	64	122	N	YES	0.48
+173	9042	178	Center_e	FALSE		1039	1	Male	A	vaginal	64	122	N	YES	0.49
+296	9042	220	Center_e	FALSE		1039	1	Male	A	vaginal	64	122	N	YES	0.79
+398	9042	263	Center_e	FALSE		1039	1	Male	A	vaginal	64	122	N	YES	0.87
+548	9042	325	Center_e	FALSE		1039	1	Male	A	vaginal	64	122	N	YES	0.9
+633	9042	360	Center_e	FALSE		1039	1	Male	A	vaginal	64	122	N	YES	0.9
+841	9042	458	Center_e	FALSE		1039	1	Male	A	vaginal	64	122	N	YES	0.9
+908	9042	492	Center_e	FALSE		1039	1	Male	A	vaginal	64	122	N	YES	0.9
+938	9042	505	Center_e	FALSE		1039	1	Male	A	vaginal	64	122	N	YES	0.89
+696	9070	392	Center_c			774	0	Male	C	vaginal	398	84	N	NO	
+775	9070	428	Center_c			774	0	Male	C	vaginal	398	84	N	NO	0.97
+855	9070	463	Center_c			774	0	Male	C	vaginal	398	84	N	NO	0.66
+904	9070	491	Center_c			774	0	Male	C	vaginal	398	84	N	NO	0.87
+983	9070	532	Center_c			774	0	Male	C	vaginal	398	84	N	NO	0.77
+56	9008	128	Center_e	FALSE		317	1	Female	A	vaginal	102	84	N	NO	
+142	9008	162	Center_e	FALSE		317	1	Female	A	vaginal	102	84	N	NO	0.34
+172	9008	177	Center_e	FALSE		317	1	Female	A	vaginal	102	84	N	NO	0.37
+352	9008	247	Center_e	FALSE		317	1	Female	A	vaginal	102	84	N	NO	0.69
+467	9008	288	Center_e	FALSE		317	1	Female	A	vaginal	102	84	N	NO	0.9
+23	9088	115	Center_e			1163	0	Male	B	vaginal	562	122	N	NO	
+87	9088	143	Center_e			1163	0	Male	B	vaginal	562	122	N	NO	0.42
+174	9088	179	Center_e			1163	0	Male	B	vaginal	562	122	N	NO	0.34
+247	9088	207	Center_e			1163	0	Male	B	vaginal	562	122	N	NO	0.73
+322	9088	234	Center_e			1163	0	Male	B	vaginal	562	122	N	NO	0.74
+409	9088	270	Center_e			1163	0	Male	B	vaginal	562	122	N	NO	0.76
+478	9088	297	Center_e			1163	0	Male	B	vaginal	562	122	N	NO	0.74
+550	9088	326	Center_e			1163	0	Male	B	vaginal	562	122	N	NO	0.74
+635	9088	360	Center_e			1163	0	Male	B	vaginal	562	122	N	NO	0.73
+688	9088	388	Center_e			1163	0	Male	B	vaginal	562	122	N	NO	0.75
+747	9088	416	Center_e			1163	0	Male	B	vaginal	562	122	N	NO	0.75
+823	9088	453	Center_e			1163	0	Male	B	vaginal	562	122	N	NO	0.72
+877	9088	482	Center_e			1163	0	Male	B	vaginal	562	122	N	NO	0.75
+941	9088	509	Center_e			1163	0	Male	B	vaginal	562	122	N	NO	0.75
+55	9074	127	Center_b			820	0	Female	C	vaginal	369	137	N	NO	
+97	9074	146	Center_b			820	0	Female	C	vaginal	369	137	N	NO	0.72
+266	9074	212	Center_b			820	0	Female	C	vaginal	369	137	N	NO	0.69
+351	9074	245	Center_b			820	0	Female	C	vaginal	369	137	N	NO	0.65
+446	9074	280	Center_b			820	0	Female	C	vaginal	369	137	N	NO	0.61
+534	9074	316	Center_b			820	0	Female	C	vaginal	369	137	N	NO	0.6
+547	9074	325	Center_b			820	0	Female	C	vaginal	369	137	N	NO	0.73
+754	9074	420	Center_b			820	0	Female	C	vaginal	369	137	N	NO	0.46
+829	9074	456	Center_b			820	0	Female	C	vaginal	369	137	N	NO	0.99
+923	9074	496	Center_b			820	0	Female	C	vaginal	369	137	N	NO	0.5
+973	9074	526	Center_b			820	0	Female	C	vaginal	369	137	N	NO	0.39
+78	9060	136	Center_e	FALSE		1407	1	Male	C	c_section	306	122	N	YES	
+128	9060	155	Center_e	FALSE		1407	1	Male	C	c_section	306	122	N	YES	0.35
+182	9060	181	Center_e	FALSE		1407	1	Male	C	c_section	306	122	N	YES	0.48
+443	9060	279	Center_e	FALSE		1407	1	Male	C	c_section	306	122	N	YES	0.92
+524	9060	310	Center_e	FALSE		1407	1	Male	C	c_section	306	122	N	YES	0.88
+577	9060	337	Center_e	FALSE		1407	1	Male	C	c_section	306	122	N	YES	0.91
+652	9060	367	Center_e	FALSE		1407	1	Male	C	c_section	306	122	N	YES	0.87
+787	9060	431	Center_e	FALSE		1407	1	Male	C	c_section	306	122	N	YES	0.94
+825	9060	454	Center_e	FALSE		1407	1	Male	C	c_section	306	122	N	YES	0.9
+883	9060	484	Center_e	FALSE		1407	1	Male	C	c_section	306	122	N	YES	0.63
+988	9060	534	Center_e	FALSE		1407	1	Male	C	c_section	306	122	N	YES	0.74
+992	9060	536	Center_e	FALSE		1407	1	Male	C	c_section	306	122	N	YES	0.85
+28	9055	116	Center_e			498	0	Male	A	vaginal	36	122	N	YES	
+125	9055	156	Center_e			498	0	Male	A	vaginal	36	122	N	YES	0.65
+167	9055	174	Center_e			498	0	Male	A	vaginal	36	122	N	YES	0.7
+272	9055	214	Center_e			498	0	Male	A	vaginal	36	122	N	YES	0.52
+339	9055	243	Center_e			498	0	Male	A	vaginal	36	122	N	YES	0.44
+416	9055	272	Center_e			498	0	Male	A	vaginal	36	122	N	YES	0.57
+484	9055	303	Center_e			498	0	Male	A	vaginal	36	122	N	YES	0.78
+572	9055	336	Center_e			498	0	Male	A	vaginal	36	122	N	YES	0.83
+640	9055	362	Center_e			498	0	Male	A	vaginal	36	122	N	YES	0.84
+755	9055	421	Center_e			498	0	Male	A	vaginal	36	122	N	YES	0.89
+818	9055	450	Center_e			498	0	Male	A	vaginal	36	122	N	YES	0.84
+903	9055	491	Center_e			498	0	Male	A	vaginal	36	122	N	YES	0.89
+34	9080	120	Center_c			1103	0	Male	C	vaginal	939	183	N	YES	
+109	9080	152	Center_c			1103	0	Male	C	vaginal	939	183	N	YES	0.59
+221	9080	190	Center_c			1103	0	Male	C	vaginal	939	183	N	YES	0.58
+297	9080	220	Center_c			1103	0	Male	C	vaginal	939	183	N	YES	0.56
+360	9080	247	Center_c			1103	0	Male	C	vaginal	939	183	N	YES	0.56
+535	9080	316	Center_c			1103	0	Male	C	vaginal	939	183	N	YES	0.51
+614	9080	350	Center_c			1103	0	Male	C	vaginal	939	183	N	YES	0.49
+793	9080	433	Center_c			1103	0	Male	C	vaginal	939	183	N	YES	0.83
+832	9080	456	Center_c			1103	0	Male	C	vaginal	939	183	N	YES	0.64
+925	9080	497	Center_c			1103	0	Male	C	vaginal	939	183	N	YES	0.69
+986	9080	532	Center_c			1103	0	Male	C	vaginal	939	183	N	YES	0.6
+132	9005	157	Center_e			732	0	Female	A	c_section	123	112	N	NO	
+190	9005	183	Center_e			732	0	Female	A	c_section	123	112	N	NO	0.65
+353	9005	246	Center_e			732	0	Female	A	c_section	123	112	N	NO	0.9
+519	9005	309	Center_e			732	0	Female	A	c_section	123	112	N	NO	0.92
+650	9005	365	Center_e			732	0	Female	A	c_section	123	112	N	NO	0.92
+772	9005	428	Center_e			732	0	Female	A	c_section	123	112	N	NO	0.93
+66	9100	131	Center_b	FALSE		1628	1	Female	A	c_section	306	112	Y	NO	
+134	9100	158	Center_b	FALSE		1628	1	Female	A	c_section	306	112	Y	NO	0.4
+232	9100	197	Center_b	FALSE		1628	1	Female	A	c_section	306	112	Y	NO	0.63
+252	9100	209	Center_b	FALSE		1628	1	Female	A	c_section	306	112	Y	NO	0.41
+396	9100	263	Center_b	FALSE		1628	1	Female	A	c_section	306	112	Y	NO	0.75
+541	9100	320	Center_b	FALSE		1628	1	Female	A	c_section	306	112	Y	NO	0.9
+620	9100	353	Center_b	FALSE		1628	1	Female	A	c_section	306	112	Y	NO	0.93
+934	9100	502	Center_b	FALSE		1628	1	Female	A	c_section	306	112	Y	NO	0.92
+996	9100	537	Center_b	FALSE		1628	1	Female	A	c_section	306	112	Y	NO	0.93
+156	9096	168	Center_d			436	0	Male	A	c_section	456	213	N	YES	
+184	9096	183	Center_d			436	0	Male	A	c_section	456	213	N	YES	0.33
+309	9096	226	Center_d			436	0	Male	A	c_section	456	213	N	YES	0.51
+464	9096	288	Center_d			436	0	Male	A	c_section	456	213	N	YES	0.91
+574	9096	337	Center_d			436	0	Male	A	c_section	456	213	N	YES	0.96
+796	9096	434	Center_d			436	0	Male	A	c_section	456	213	N	YES	0.91
+149	9010	163	Center_e			1044	0	Male	A	vaginal	593	77	N	YES	
+285	9010	218	Center_e			1044	0	Male	A	vaginal	593	77	N	YES	0.55
+336	9010	243	Center_e			1044	0	Male	A	vaginal	593	77	N	YES	0.91
+472	9010	294	Center_e			1044	0	Male	A	vaginal	593	77	N	YES	0.57
+551	9010	327	Center_e			1044	0	Male	A	vaginal	593	77	N	YES	0.62
+960	9010	520	Center_e			1044	0	Male	A	vaginal	593	77	N	YES	0.61
+1004	9010	544	Center_e			1044	0	Male	A	vaginal	593	77	N	YES	0.71
+77	9087	136	Center_d			322	0	Female	B	vaginal	471	137	N	NO	
+148	9087	163	Center_d			322	0	Female	B	vaginal	471	137	N	NO	0.24
+234	9087	196	Center_d			322	0	Female	B	vaginal	471	137	N	NO	0.63
+314	9087	226	Center_d			322	0	Female	B	vaginal	471	137	N	NO	0.56
+387	9087	258	Center_d			322	0	Female	B	vaginal	471	137	N	NO	0.67
+451	9087	281	Center_d			322	0	Female	B	vaginal	471	137	N	NO	0.73
+537	9087	317	Center_d			322	0	Female	B	vaginal	471	137	N	NO	0.85
+29	9079	117	Center_e			491	0	Male	B	vaginal	187	122	N	NO	
+105	9079	153	Center_e			491	0	Male	B	vaginal	187	122	N	NO	0.09
+176	9079	179	Center_e			491	0	Male	B	vaginal	187	122	N	NO	0.25
+281	9079	217	Center_e			491	0	Male	B	vaginal	187	122	N	NO	0.55
+361	9079	249	Center_e			491	0	Male	B	vaginal	187	122	N	NO	0.47
+415	9079	271	Center_e			491	0	Male	B	vaginal	187	122	N	NO	0.52
+487	9079	304	Center_e			491	0	Male	B	vaginal	187	122	N	NO	0.63
+569	9079	335	Center_e			491	0	Male	B	vaginal	187	122	N	NO	0.77
+656	9079	368	Center_e			491	0	Male	B	vaginal	187	122	N	NO	0.63
+736	9079	412	Center_e			491	0	Male	B	vaginal	187	122	N	NO	0.87
+770	9079	427	Center_e			491	0	Male	B	vaginal	187	122	N	NO	0.82
+847	9079	461	Center_e			491	0	Male	B	vaginal	187	122	N	NO	0.75
+880	9079	483	Center_e			491	0	Male	B	vaginal	187	122	N	NO	0.64
+50	9023	125	Center_e			474	0	Male	A	vaginal	155	137	N	NO	
+118	9023	154	Center_e			474	0	Male	A	vaginal	155	137	N	NO	0.46
+201	9023	186	Center_e			474	0	Male	A	vaginal	155	137	N	NO	0.58
+287	9023	217	Center_e			474	0	Male	A	vaginal	155	137	N	NO	0.86
+428	9023	276	Center_e			474	0	Male	A	vaginal	155	137	N	NO	0.73
+510	9023	308	Center_e			474	0	Male	A	vaginal	155	137	N	NO	0.7
+608	9023	347	Center_e			474	0	Male	A	vaginal	155	137	N	NO	0.97
+741	9023	414	Center_e			474	0	Male	A	vaginal	155	137	N	NO	0.91
+795	9023	434	Center_e			474	0	Male	A	vaginal	155	137	N	NO	0.98
+866	9023	470	Center_e			474	0	Male	A	vaginal	155	137	N	NO	0.96
+111	9032	152	Center_e			862	0	Female	C	c_section	445	105	N	YES	
+209	9032	187	Center_e			862	0	Female	C	c_section	445	105	N	YES	0.67
+270	9032	214	Center_e			862	0	Female	C	c_section	445	105	N	YES	0.49
+335	9032	242	Center_e			862	0	Female	C	c_section	445	105	N	YES	0.9
+441	9032	279	Center_e			862	0	Female	C	c_section	445	105	N	YES	0.93
+490	9032	304	Center_e			862	0	Female	C	c_section	445	105	N	YES	0.94
+570	9032	336	Center_e			862	0	Female	C	c_section	445	105	N	YES	0.94
+657	9032	368	Center_e			862	0	Female	C	c_section	445	105	N	YES	0.62
+704	9032	396	Center_e			862	0	Female	C	c_section	445	105	N	YES	0.84
+767	9032	426	Center_e			862	0	Female	C	c_section	445	105	N	YES	0.86
+839	9032	458	Center_e			862	0	Female	C	c_section	445	105	N	YES	0.78
+910	9032	492	Center_e			862	0	Female	C	c_section	445	105	N	YES	0.78
+1016	9032	549	Center_e			862	0	Female	C	c_section	445	105	N	YES	0.82
+22	9049	113	Center_a			1293	0	Male	A	c_section	367	112	N	YES	
+185	9049	182	Center_a			1293	0	Male	A	c_section	367	112	N	YES	0.5
+274	9049	215	Center_a			1293	0	Male	A	c_section	367	112	N	YES	0.69
+337	9049	244	Center_a			1293	0	Male	A	c_section	367	112	N	YES	0.76
+423	9049	274	Center_a			1293	0	Male	A	c_section	367	112	N	YES	0.79
+567	9049	334	Center_a			1293	0	Male	A	c_section	367	112	N	YES	0.98
+660	9049	369	Center_a			1293	0	Male	A	c_section	367	112	N	YES	0.98
+706	9049	398	Center_a			1293	0	Male	A	c_section	367	112	N	YES	0.99
+765	9049	426	Center_a			1293	0	Male	A	c_section	367	112	N	YES	0.95
+824	9049	453	Center_a			1293	0	Male	A	c_section	367	112	N	YES	0.97
+895	9049	489	Center_a			1293	0	Male	A	c_section	367	112	N	YES	0.99
+944	9049	510	Center_a			1293	0	Male	A	c_section	367	112	N	YES	0.98
+995	9049	538	Center_a			1293	0	Male	A	c_section	367	112	N	YES	0.96
+121	9053	154	Center_d			560	0	Female	C	vaginal	17	213	N	YES	
+204	9053	185	Center_d			560	0	Female	C	vaginal	17	213	N	YES	0.03
+298	9053	219	Center_d			560	0	Female	C	vaginal	17	213	N	YES	0.26
+447	9053	280	Center_d			560	0	Female	C	vaginal	17	213	N	YES	0.45
+517	9053	310	Center_d			560	0	Female	C	vaginal	17	213	N	YES	0.46
+604	9053	344	Center_d			560	0	Female	C	vaginal	17	213	N	YES	0.33
+803	9053	436	Center_d			560	0	Female	C	vaginal	17	213	N	YES	0.63
+975	9053	526	Center_d			560	0	Female	C	vaginal	17	213	N	YES	0.71
+65	9024	131	Center_b			843	0	Female	A	vaginal	351	122	N	YES	
+175	9024	180	Center_b			843	0	Female	A	vaginal	351	122	N	YES	0.51
+277	9024	216	Center_b			843	0	Female	A	vaginal	351	122	N	YES	0.86
+456	9024	285	Center_b			843	0	Female	A	vaginal	351	122	N	YES	0.77
+675	9024	376	Center_b			843	0	Female	A	vaginal	351	122	N	YES	0.52
+863	9024	469	Center_b			843	0	Female	A	vaginal	351	122	N	YES	0.68
+876	9024	481	Center_b			843	0	Female	A	vaginal	351	122	N	YES	0.93
+70	9090	134	Center_e			1247	0	Male	A	vaginal	261	122	N	NO	
+126	9090	155	Center_e			1247	0	Male	A	vaginal	261	122	N	NO	0.09
+189	9090	183	Center_e			1247	0	Male	A	vaginal	261	122	N	NO	0.94
+288	9090	218	Center_e			1247	0	Male	A	vaginal	261	122	N	NO	0.33
+359	9090	247	Center_e			1247	0	Male	A	vaginal	261	122	N	NO	1
+445	9090	279	Center_e			1247	0	Male	A	vaginal	261	122	N	NO	0.99
+514	9090	309	Center_e			1247	0	Male	A	vaginal	261	122	N	NO	0.99
+591	9090	338	Center_e			1247	0	Male	A	vaginal	261	122	N	NO	0.99
+642	9090	363	Center_e			1247	0	Male	A	vaginal	261	122	N	NO	0.99
+714	9090	400	Center_e			1247	0	Male	A	vaginal	261	122	N	NO	0.99
+788	9090	431	Center_e			1247	0	Male	A	vaginal	261	122	N	NO	0.99
+881	9090	484	Center_e			1247	0	Male	A	vaginal	261	122	N	NO	0.99
+964	9090	522	Center_e			1247	0	Male	A	vaginal	261	122	N	NO	0.99
+1005	9090	544	Center_e			1247	0	Male	A	vaginal	261	122	N	NO	0.99
+31	9085	118	Center_b			320	0	Female	A	vaginal	247	105	N	YES	
+166	9085	174	Center_b			320	0	Female	A	vaginal	247	105	N	YES	0.53
+253	9085	209	Center_b			320	0	Female	A	vaginal	247	105	N	YES	0.38
+326	9085	237	Center_b			320	0	Female	A	vaginal	247	105	N	YES	0.46
+529	9085	313	Center_b			320	0	Female	A	vaginal	247	105	N	YES	0.66
+95	9003	146	Center_d			877	0	Male	C	vaginal	368	167	N	NO	
+180	9003	180	Center_d			877	0	Male	C	vaginal	368	167	N	NO	0.28
+259	9003	210	Center_d			877	0	Male	C	vaginal	368	167	N	NO	0.38
+459	9003	284	Center_d			877	0	Male	C	vaginal	368	167	N	NO	0.82
+513	9003	308	Center_d			877	0	Male	C	vaginal	368	167	N	NO	0.96
+582	9003	338	Center_d			877	0	Male	C	vaginal	368	167	N	NO	0.9
+663	9003	370	Center_d			877	0	Male	C	vaginal	368	167	N	NO	0.89
+728	9003	406	Center_d			877	0	Male	C	vaginal	368	167	N	NO	0.91
+798	9003	434	Center_d			877	0	Male	C	vaginal	368	167	N	NO	0.96
+846	9003	459	Center_d			877	0	Male	C	vaginal	368	167	N	NO	0.9
+896	9003	489	Center_d			877	0	Male	C	vaginal	368	167	N	NO	0.8
+951	9003	516	Center_d			877	0	Male	C	vaginal	368	167	N	NO	0.91
+1006	9003	544	Center_d			877	0	Male	C	vaginal	368	167	N	NO	0.87
+47	9038	125	Center_a			1298	0	Male	B	vaginal	305	122	N	NO	
+137	9038	159	Center_a			1298	0	Male	B	vaginal	305	122	N	NO	0.86
+191	9038	183	Center_a			1298	0	Male	B	vaginal	305	122	N	NO	0.75
+294	9038	219	Center_a			1298	0	Male	B	vaginal	305	122	N	NO	0.93
+366	9038	249	Center_a			1298	0	Male	B	vaginal	305	122	N	NO	0.65
+454	9038	284	Center_a			1298	0	Male	B	vaginal	305	122	N	NO	0.75
+492	9038	305	Center_a			1298	0	Male	B	vaginal	305	122	N	NO	0.7
+579	9038	337	Center_a			1298	0	Male	B	vaginal	305	122	N	NO	0.89
+632	9038	359	Center_a			1298	0	Male	B	vaginal	305	122	N	NO	0.87
+720	9038	403	Center_a			1298	0	Male	B	vaginal	305	122	N	NO	0.81
+789	9038	431	Center_a			1298	0	Male	B	vaginal	305	122	N	NO	0.74
+911	9038	494	Center_a			1298	0	Male	B	vaginal	305	122	N	NO	0.97
+961	9038	521	Center_a			1298	0	Male	B	vaginal	305	122	N	NO	0.9
+39	9086	123	Center_a			312	0	Male	A	c_section	368	122	N	YES	
+88	9086	143	Center_a			312	0	Male	A	c_section	368	122	N	YES	0.12
+210	9086	186	Center_a			312	0	Male	A	c_section	368	122	N	YES	0.31
+313	9086	227	Center_a			312	0	Male	A	c_section	368	122	N	YES	0.27
+376	9086	253	Center_a			312	0	Male	A	c_section	368	122	N	YES	0.47
+525	9086	312	Center_a			312	0	Male	A	c_section	368	122	N	YES	0.78
+100	9036	150	Center_e			562	0	Male	A	vaginal	186	122	Y	NO	
+205	9036	187	Center_e			562	0	Male	A	vaginal	186	122	Y	NO	0.19
+374	9036	251	Center_e			562	0	Male	A	vaginal	186	122	Y	NO	0.67
+429	9036	276	Center_e			562	0	Male	A	vaginal	186	122	Y	NO	0.78
+501	9036	307	Center_e			562	0	Male	A	vaginal	186	122	Y	NO	0.83
+598	9036	342	Center_e			562	0	Male	A	vaginal	186	122	Y	NO	0.83
+776	9036	429	Center_e			562	0	Male	A	vaginal	186	122	Y	NO	0.84
+837	9036	458	Center_e			562	0	Male	A	vaginal	186	122	Y	NO	0.78
+914	9036	494	Center_e			562	0	Male	A	vaginal	186	122	Y	NO	0.82
+968	9036	525	Center_e			562	0	Male	A	vaginal	186	122	Y	NO	0.84
+75	9017	135	Center_f			1150	0	Female	B	vaginal	248	152	N	YES	
+144	9017	162	Center_f			1150	0	Female	B	vaginal	248	152	N	YES	0.1
+240	9017	198	Center_f			1150	0	Female	B	vaginal	248	152	N	YES	0.98
+389	9017	260	Center_f			1150	0	Female	B	vaginal	248	152	N	YES	0.98
+482	9017	301	Center_f			1150	0	Female	B	vaginal	248	152	N	YES	0.98
+549	9017	325	Center_f			1150	0	Female	B	vaginal	248	152	N	YES	0.98
+649	9017	365	Center_f			1150	0	Female	B	vaginal	248	152	N	YES	0.96
+761	9017	422	Center_f			1150	0	Female	B	vaginal	248	152	N	YES	0.99
+834	9017	456	Center_f			1150	0	Female	B	vaginal	248	152	N	YES	0.99
+907	9017	493	Center_f			1150	0	Female	B	vaginal	248	152	N	YES	0.99
+949	9017	514	Center_f			1150	0	Female	B	vaginal	248	152	N	YES	0.98
+1011	9017	546	Center_f			1150	0	Female	B	vaginal	248	152	N	YES	0.99
+27	9033	115	Center_e			1095	0	Male	C	vaginal	25	137	N	NO	
+171	9033	177	Center_e			1095	0	Male	C	vaginal	25	137	N	NO	0.9
+267	9033	213	Center_e			1095	0	Male	C	vaginal	25	137	N	NO	0.83
+332	9033	242	Center_e			1095	0	Male	C	vaginal	25	137	N	NO	0.71
+405	9033	267	Center_e			1095	0	Male	C	vaginal	25	137	N	NO	0.74
+483	9033	303	Center_e			1095	0	Male	C	vaginal	25	137	N	NO	0.85
+561	9033	330	Center_e			1095	0	Male	C	vaginal	25	137	N	NO	0.89
+634	9033	359	Center_e			1095	0	Male	C	vaginal	25	137	N	NO	0.9
+699	9033	394	Center_e			1095	0	Male	C	vaginal	25	137	N	NO	0.82
+801	9033	435	Center_e			1095	0	Male	C	vaginal	25	137	N	NO	0.87
+835	9033	457	Center_e			1095	0	Male	C	vaginal	25	137	N	NO	0.86
+892	9033	487	Center_e			1095	0	Male	C	vaginal	25	137	N	NO	0.73
+1013	9033	547	Center_e			1095	0	Male	C	vaginal	25	137	N	NO	0.84
+37	9030	123	Center_b			584	0	Male	C	vaginal	217	122	N	YES	
+101	9030	151	Center_b			584	0	Male	C	vaginal	217	122	N	YES	0.1
+178	9030	181	Center_b			584	0	Male	C	vaginal	217	122	N	YES	0.13
+265	9030	213	Center_b			584	0	Male	C	vaginal	217	122	N	YES	0.19
+333	9030	243	Center_b			584	0	Male	C	vaginal	217	122	N	YES	0.23
+418	9030	272	Center_b			584	0	Male	C	vaginal	217	122	N	YES	0.31
+495	9030	305	Center_b			584	0	Male	C	vaginal	217	122	N	YES	0.36
+588	9030	339	Center_b			584	0	Male	C	vaginal	217	122	N	YES	0.36
+655	9030	368	Center_b			584	0	Male	C	vaginal	217	122	N	YES	0.85
+703	9030	397	Center_b			584	0	Male	C	vaginal	217	122	N	YES	0.95
+781	9030	430	Center_b			584	0	Male	C	vaginal	217	122	N	YES	0.9
+838	9030	458	Center_b			584	0	Male	C	vaginal	217	122	N	YES	0.98
+890	9030	487	Center_b			584	0	Male	C	vaginal	217	122	N	YES	0.99
+963	9030	521	Center_b			584	0	Male	C	vaginal	217	122	N	YES	0.99
+350	9094	245	Center_e			1046	0	Female	A	vaginal	130	122	N	NO	
+516	9094	310	Center_e			1046	0	Female	A	vaginal	130	122	N	NO	0.71
+585	9094	338	Center_e			1046	0	Female	A	vaginal	130	122	N	NO	0.58
+710	9094	398	Center_e			1046	0	Female	A	vaginal	130	122	N	NO	0.59
+840	9094	459	Center_e			1046	0	Female	A	vaginal	130	122	N	NO	0.53
+919	9094	496	Center_e			1046	0	Female	A	vaginal	130	122	N	NO	0.48
+959	9094	520	Center_e			1046	0	Female	A	vaginal	130	122	N	NO	0.73
+195	9059	184	Center_e			984	0	Male	C	vaginal	133	152	N	NO	
+289	9059	218	Center_e			984	0	Male	C	vaginal	133	152	N	NO	0.41
+382	9059	253	Center_e			984	0	Male	C	vaginal	133	152	N	NO	0.48
+422	9059	274	Center_e			984	0	Male	C	vaginal	133	152	N	NO	0.34
+486	9059	303	Center_e			984	0	Male	C	vaginal	133	152	N	NO	0.44
+624	9059	357	Center_e			984	0	Male	C	vaginal	133	152	N	NO	0.45
+694	9059	392	Center_e			984	0	Male	C	vaginal	133	152	N	NO	0.49
+886	9059	485	Center_e			984	0	Male	C	vaginal	133	152	N	NO	0.52
+989	9059	533	Center_e			984	0	Male	C	vaginal	133	152	N	NO	0.49
+30	9081	118	Center_b			1422	0	Female	A	c_section	226	152	N	NO	
+133	9081	159	Center_b			1422	0	Female	A	c_section	226	152	N	NO	0.55
+215	9081	188	Center_b			1422	0	Female	A	c_section	226	152	N	NO	0.84
+347	9081	245	Center_b			1422	0	Female	A	c_section	226	152	N	NO	0.62
+460	9081	286	Center_b			1422	0	Female	A	c_section	226	152	N	NO	0.66
+533	9081	315	Center_b			1422	0	Female	A	c_section	226	152	N	NO	0.72
+566	9081	335	Center_b			1422	0	Female	A	c_section	226	152	N	NO	0.64
+665	9081	372	Center_b			1422	0	Female	A	c_section	226	152	N	NO	0.71
+708	9081	399	Center_b			1422	0	Female	A	c_section	226	152	N	NO	0.74
+768	9081	426	Center_b			1422	0	Female	A	c_section	226	152	N	NO	0.79
+915	9081	495	Center_b			1422	0	Female	A	c_section	226	152	N	NO	0.84
+953	9081	518	Center_b			1422	0	Female	A	c_section	226	152	N	NO	0.92
+45	9047	124	Center_e			1017	0	Female	A	c_section	248	129	N	NO	
+119	9047	155	Center_e			1017	0	Female	A	c_section	248	129	N	NO	0.08
+208	9047	186	Center_e			1017	0	Female	A	c_section	248	129	N	NO	0.13
+436	9047	279	Center_e			1017	0	Female	A	c_section	248	129	N	NO	0.34
+511	9047	308	Center_e			1017	0	Female	A	c_section	248	129	N	NO	0.32
+643	9047	364	Center_e			1017	0	Female	A	c_section	248	129	N	NO	0.4
+725	9047	405	Center_e			1017	0	Female	A	c_section	248	129	N	NO	0.47
+844	9047	460	Center_e			1017	0	Female	A	c_section	248	129	N	NO	0.57
+932	9047	502	Center_e			1017	0	Female	A	c_section	248	129	N	NO	0.85
+311	9043	227	Center_c	FALSE		1043	1	Male	B	vaginal	247	137	N	NO	
+345	9043	246	Center_c	FALSE		1043	1	Male	B	vaginal	247	137	N	NO	0.25
+544	9043	321	Center_c	FALSE		1043	1	Male	B	vaginal	247	137	N	NO	0.32
+644	9043	364	Center_c	FALSE		1043	1	Male	B	vaginal	247	137	N	NO	0.25
+701	9043	395	Center_c	FALSE		1043	1	Male	B	vaginal	247	137	N	NO	0.62
+811	9043	446	Center_c	FALSE		1043	1	Male	B	vaginal	247	137	N	NO	0.78
+891	9043	486	Center_c	FALSE		1043	1	Male	B	vaginal	247	137	N	NO	0.15
+16	9021	111	Center_e			1462	0	Male	A	vaginal	274	122	N	YES	
+237	9021	199	Center_e			1462	0	Male	A	vaginal	274	122	N	YES	0.7
+394	9021	262	Center_e			1462	0	Male	A	vaginal	274	122	N	YES	0.87
+546	9021	325	Center_e			1462	0	Male	A	vaginal	274	122	N	YES	0.7
+686	9021	382	Center_e			1462	0	Male	A	vaginal	274	122	N	YES	0.75
+745	9021	416	Center_e			1462	0	Male	A	vaginal	274	122	N	YES	0.75
+997	9021	539	Center_e			1462	0	Male	A	vaginal	274	122	N	YES	0.72
+79	9061	138	Center_e			783	0	Female	A	vaginal	201	70	N	YES	
+155	9061	167	Center_e			783	0	Female	A	vaginal	201	70	N	YES	0.28
+316	9061	229	Center_e			783	0	Female	A	vaginal	201	70	N	YES	0.54
+470	9061	292	Center_e			783	0	Female	A	vaginal	201	70	N	YES	0.61
+612	9061	348	Center_e			783	0	Female	A	vaginal	201	70	N	YES	0.64
+685	9061	381	Center_e			783	0	Female	A	vaginal	201	70	N	YES	0.86
+936	9061	502	Center_e			783	0	Female	A	vaginal	201	70	N	YES	0.69
+76	9073	135	Center_e			267	0	Male	A	c_section	236	137	N	NO	
+163	9073	172	Center_e			267	0	Male	A	c_section	236	137	N	NO	0.8
+242	9073	200	Center_e			267	0	Male	A	c_section	236	137	N	NO	0.6
+317	9073	229	Center_e			267	0	Male	A	c_section	236	137	N	NO	0.57
+397	9073	262	Center_e			267	0	Male	A	c_section	236	137	N	NO	0.66
+43	9014	124	Center_e			412	0	Male	A	vaginal	169	129	N	NO	
+114	9014	154	Center_e			412	0	Male	A	vaginal	169	129	N	NO	0.16
+196	9014	183	Center_e			412	0	Male	A	vaginal	169	129	N	NO	0.42
+283	9014	216	Center_e			412	0	Male	A	vaginal	169	129	N	NO	0.41
+343	9014	245	Center_e			412	0	Male	A	vaginal	169	129	N	NO	0.48
+426	9014	275	Center_e			412	0	Male	A	vaginal	169	129	N	NO	0.4
+618	9014	351	Center_e			412	0	Male	A	vaginal	169	129	N	NO	0.62
+732	9014	407	Center_e			412	0	Male	A	vaginal	169	129	N	NO	0.54
+11	9011	105	Center_b	FALSE		831	1	Male	A	vaginal	323	91	Y	NO	
+85	9011	143	Center_b	FALSE		831	1	Male	A	vaginal	323	91	Y	NO	0.2
+241	9011	198	Center_b	FALSE		831	1	Male	A	vaginal	323	91	Y	NO	0.13
+349	9011	246	Center_b	FALSE		831	1	Male	A	vaginal	323	91	Y	NO	0.3
+401	9011	264	Center_b	FALSE		831	1	Male	A	vaginal	323	91	Y	NO	0.18
+507	9011	308	Center_b	FALSE		831	1	Male	A	vaginal	323	91	Y	NO	0.51
+603	9011	344	Center_b	FALSE		831	1	Male	A	vaginal	323	91	Y	NO	0.77
+719	9011	402	Center_b	FALSE		831	1	Male	A	vaginal	323	91	Y	NO	0.99
+897	9011	490	Center_b	FALSE		831	1	Male	A	vaginal	323	91	Y	NO	0.97
+1000	9011	541	Center_b	FALSE		831	1	Male	A	vaginal	323	91	Y	NO	0.98
+81	9098	141	Center_b			1483	0	Female	A	vaginal	59	46	N	NO	
+321	9098	231	Center_b			1483	0	Female	A	vaginal	59	46	N	NO	0.58
+402	9098	265	Center_b			1483	0	Female	A	vaginal	59	46	N	NO	0.53
+474	9098	296	Center_b			1483	0	Female	A	vaginal	59	46	N	NO	0.66
+578	9098	337	Center_b			1483	0	Female	A	vaginal	59	46	N	NO	0.73
+673	9098	374	Center_b			1483	0	Female	A	vaginal	59	46	N	NO	0.34
+744	9098	415	Center_b			1483	0	Female	A	vaginal	59	46	N	NO	0.52
+817	9098	450	Center_b			1483	0	Female	A	vaginal	59	46	N	NO	0.28
+884	9098	485	Center_b			1483	0	Female	A	vaginal	59	46	N	NO	0.68
+99	9013	149	Center_b			761	0	Male	B	vaginal	375	112	N	YES	
+199	9013	185	Center_b			761	0	Male	B	vaginal	375	112	N	YES	0.77
+328	9013	238	Center_b			761	0	Male	B	vaginal	375	112	N	YES	0.46
+424	9013	275	Center_b			761	0	Male	B	vaginal	375	112	N	YES	0.77
+497	9013	306	Center_b			761	0	Male	B	vaginal	375	112	N	YES	0.44
+562	9013	332	Center_b			761	0	Male	B	vaginal	375	112	N	YES	0.74
+994	9013	536	Center_b			761	0	Male	B	vaginal	375	112	N	YES	0.85
+102	9009	150	Center_b	FALSE		748	1	Male	C	vaginal	183	91	N	NO	
+206	9009	187	Center_b	FALSE		748	1	Male	C	vaginal	183	91	N	NO	0.72
+269	9009	213	Center_b	FALSE		748	1	Male	C	vaginal	183	91	N	NO	0.92
+341	9009	245	Center_b	FALSE		748	1	Male	C	vaginal	183	91	N	NO	0.52
+438	9009	278	Center_b	FALSE		748	1	Male	C	vaginal	183	91	N	NO	0.75
+502	9009	307	Center_b	FALSE		748	1	Male	C	vaginal	183	91	N	NO	0.73
+592	9009	340	Center_b	FALSE		748	1	Male	C	vaginal	183	91	N	NO	0.56
+662	9009	370	Center_b	FALSE		748	1	Male	C	vaginal	183	91	N	NO	0.67
+783	9009	430	Center_b	FALSE		748	1	Male	C	vaginal	183	91	N	NO	0.67
+869	9009	472	Center_b	FALSE		748	1	Male	C	vaginal	183	91	N	NO	0.83
+21	9054	113	Center_b			997	0	Female	B	vaginal	250	70	N	YES	
+80	9054	140	Center_b			997	0	Female	B	vaginal	250	70	N	YES	0.12
+255	9054	210	Center_b			997	0	Female	B	vaginal	250	70	N	YES	0.55
+475	9054	296	Center_b			997	0	Female	B	vaginal	250	70	N	YES	0.26
+621	9054	354	Center_b			997	0	Female	B	vaginal	250	70	N	YES	0.48
+740	9054	412	Center_b			997	0	Female	B	vaginal	250	70	N	YES	0.98
+810	9054	446	Center_b			997	0	Female	B	vaginal	250	70	N	YES	0.93
+873	9054	477	Center_b			997	0	Female	B	vaginal	250	70	N	YES	0.9
+998	9054	539	Center_b			997	0	Female	B	vaginal	250	70	N	YES	0.73
+98	9002	148	Center_b			854	0	Female	A	vaginal	231	70	N	NO	
+220	9002	190	Center_b			854	0	Female	A	vaginal	231	70	N	NO	0.22
+263	9002	212	Center_b			854	0	Female	A	vaginal	231	70	N	NO	0.93
+329	9002	239	Center_b			854	0	Female	A	vaginal	231	70	N	NO	0.64
+427	9002	275	Center_b			854	0	Female	A	vaginal	231	70	N	NO	0.8
+556	9002	329	Center_b			854	0	Female	A	vaginal	231	70	N	NO	0.87
+626	9002	357	Center_b			854	0	Female	A	vaginal	231	70	N	NO	0.9
+715	9002	401	Center_b			854	0	Female	A	vaginal	231	70	N	NO	0.96
+774	9002	428	Center_b			854	0	Female	A	vaginal	231	70	N	NO	0.97
+830	9002	456	Center_b			854	0	Female	A	vaginal	231	70	N	NO	0.95
+928	9002	500	Center_b			854	0	Female	A	vaginal	231	70	N	NO	0.92
+956	9002	518	Center_b			854	0	Female	A	vaginal	231	70	N	NO	0.91
+1012	9002	546	Center_b			854	0	Female	A	vaginal	231	70	N	NO	0.92
+82	9004	142	Center_b			602	0	Female	B	vaginal	156	183	N	NO	
+160	9004	170	Center_b			602	0	Female	B	vaginal	156	183	N	NO	0.19
+465	9004	288	Center_b			602	0	Female	B	vaginal	156	183	N	NO	0.17
+521	9004	310	Center_b			602	0	Female	B	vaginal	156	183	N	NO	0.75
+669	9004	373	Center_b			602	0	Female	B	vaginal	156	183	N	NO	0.94
+930	9004	501	Center_b			602	0	Female	B	vaginal	156	183	N	NO	0.98
+74	9065	134	Center_b	FALSE		1286	1	Male	B	vaginal	186	84	N	YES	
+120	9065	155	Center_b	FALSE		1286	1	Male	B	vaginal	186	84	N	YES	0.6
+239	9065	198	Center_b	FALSE		1286	1	Male	B	vaginal	186	84	N	YES	0.41
+307	9065	225	Center_b	FALSE		1286	1	Male	B	vaginal	186	84	N	YES	0.9
+399	9065	263	Center_b	FALSE		1286	1	Male	B	vaginal	186	84	N	YES	0.91
+617	9065	352	Center_b	FALSE		1286	1	Male	B	vaginal	186	84	N	YES	0.89
+151	9006	164	Center_d	FALSE		857	1	Male	A	vaginal	140	205	N	NO	
+315	9006	228	Center_d	FALSE		857	1	Male	A	vaginal	140	205	N	NO	0.13
+384	9006	256	Center_d	FALSE		857	1	Male	A	vaginal	140	205	N	NO	0.16
+452	9006	283	Center_d	FALSE		857	1	Male	A	vaginal	140	205	N	NO	0.12
+523	9006	310	Center_d	FALSE		857	1	Male	A	vaginal	140	205	N	NO	0.95
+563	9006	334	Center_d	FALSE		857	1	Male	A	vaginal	140	205	N	NO	0.83
+674	9006	374	Center_d	FALSE		857	1	Male	A	vaginal	140	205	N	NO	0.97
+716	9006	402	Center_d	FALSE		857	1	Male	A	vaginal	140	205	N	NO	0.96
+779	9006	429	Center_d	FALSE		857	1	Male	A	vaginal	140	205	N	NO	0.94
+859	9006	465	Center_d	FALSE		857	1	Male	A	vaginal	140	205	N	NO	0.97
+933	9006	502	Center_d	FALSE		857	1	Male	A	vaginal	140	205	N	NO	0.95
+976	9006	528	Center_d	FALSE		857	1	Male	A	vaginal	140	205	N	NO	0.93
+25	9077	115	Center_e			574	0	Male	C	vaginal	340	122	N	YES	
+89	9077	145	Center_e			574	0	Male	C	vaginal	340	122	N	YES	0.44
+169	9077	175	Center_e			574	0	Male	C	vaginal	340	122	N	YES	0.76
+246	9077	207	Center_e			574	0	Male	C	vaginal	340	122	N	YES	0.81
+325	9077	237	Center_e			574	0	Male	C	vaginal	340	122	N	YES	0.83
+407	9077	268	Center_e			574	0	Male	C	vaginal	340	122	N	YES	0.84
+481	9077	302	Center_e			574	0	Male	C	vaginal	340	122	N	YES	0.41
+564	9077	334	Center_e			574	0	Male	C	vaginal	340	122	N	YES	0.7
+623	9077	356	Center_e			574	0	Male	C	vaginal	340	122	N	YES	0.72
+691	9077	390	Center_e			574	0	Male	C	vaginal	340	122	N	YES	0.89
+748	9077	416	Center_e			574	0	Male	C	vaginal	340	122	N	YES	0.9
+816	9077	449	Center_e			574	0	Male	C	vaginal	340	122	N	YES	0.86
+946	9077	510	Center_e			574	0	Male	C	vaginal	340	122	N	YES	0.94
+1001	9077	542	Center_e			574	0	Male	C	vaginal	340	122	N	YES	0.89
+14	9039	111	Center_a			1392	0	Female	C	vaginal	278	122	N	NO	
+136	9039	159	Center_a			1392	0	Female	C	vaginal	278	122	N	NO	0.83
+248	9039	207	Center_a			1392	0	Female	C	vaginal	278	122	N	NO	0.86
+363	9039	249	Center_a			1392	0	Female	C	vaginal	278	122	N	NO	0.82
+437	9039	279	Center_a			1392	0	Female	C	vaginal	278	122	N	NO	0.91
+527	9039	313	Center_a			1392	0	Female	C	vaginal	278	122	N	NO	0.9
+599	9039	344	Center_a			1392	0	Female	C	vaginal	278	122	N	NO	0.74
+641	9039	363	Center_a			1392	0	Female	C	vaginal	278	122	N	NO	0.82
+700	9039	394	Center_a			1392	0	Female	C	vaginal	278	122	N	NO	0.72
+762	9039	424	Center_a			1392	0	Female	C	vaginal	278	122	N	NO	0.87
+849	9039	460	Center_a			1392	0	Female	C	vaginal	278	122	N	NO	0.84
+900	9039	491	Center_a			1392	0	Female	C	vaginal	278	122	N	NO	0.85
+971	9039	525	Center_a			1392	0	Female	C	vaginal	278	122	N	NO	0.87
+1008	9039	546	Center_a			1392	0	Female	C	vaginal	278	122	N	NO	0.82
+13	9018	110	Center_b			784	0	Female	A	vaginal	275	56	N	YES	
+154	9018	167	Center_b			784	0	Female	A	vaginal	275	56	N	YES	0.42
+284	9018	217	Center_b			784	0	Female	A	vaginal	275	56	N	YES	0.38
+412	9018	272	Center_b			784	0	Female	A	vaginal	275	56	N	YES	0.14
+505	9018	307	Center_b			784	0	Female	A	vaginal	275	56	N	YES	0.8
+610	9018	348	Center_b			784	0	Female	A	vaginal	275	56	N	YES	0.87
+750	9018	419	Center_b			784	0	Female	A	vaginal	275	56	N	YES	0.74
+874	9018	478	Center_b			784	0	Female	A	vaginal	275	56	N	YES	0.99
