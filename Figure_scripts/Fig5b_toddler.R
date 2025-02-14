@@ -1,20 +1,26 @@
-
-#################
-# load the data #
-#################
-source("~/script/packages_load.R")
 library(tidyverse)
 library(reshape2)
-setwd("~/ddong/TEDDY/")
+library(ggplot2)
+library(viridis)
+library(scales)
+library(lmerTest)
+
+setwd("~/ddong/TEDDY_project//")
+##--------------------------------------
+## Fig. 5b: toddler  examples
+##--------------------------------------
+
+### Data loading
 opts <- list()
 opts$m <- "./output/microbiome_toddler.txt"
-opts$g <- "./genetics.bed/filter/teddy_out8.qc.PCA_PC1-PC5.tsv"
+opts$g <- "./data/genetics.bed/filter/teddy_out8.qc.PCA_PC1-PC5.tsv"
 opts$d <- "./output/metadata_sample.txt"
 opts$i <- "./output/model_anova_total_toddler.txt"
 opts$p <- 'bonferroni'
 opts$o <- "./output/micro_toddler"
-# microbiome data
 
+
+# microbiome data
 microbiome_melt <- read.csv(opts$m, sep="\t", header=T) %>%
   mutate(sample_id = factor(sample_id)) %>%
   melt() %>%
@@ -27,8 +33,6 @@ microbiome <- read.csv(opts$m, sep="\t", header=T) %>%
   melt() %>%
   mutate(value = log10(value + eps)) %>%
   dcast(sample_id ~ variable, value.var="value")
-
-microbiome[1:3,1:3]
 
 # genetics data
 
@@ -45,30 +49,19 @@ df_subjects <- merge(metadata, snps, by="subject_id")
 dat <- merge(df_subjects, microbiome, by="sample_id") %>%
   rename(Subject=subject_id, Day=Days) %>%
   mutate(Subject=factor(Subject))
+
 #############################################
 # visualisation of significant associations #
 #############################################
-
-library(dplyr)
-library(reshape2)
-library(ggplot2)
-library(viridis)
-library(scales)
-library(lmerTest)
-
 # input
-
 model_stats <- read.csv(opts$i, sep="\t", header=T)
-
 head(model_stats)
 
 # output directory
-
 dir.create(opts$o)
 
 ####################
 # p-value adjustment
-
 df_sig <- model_stats %>%  filter(!Predictor %in% c("Country","Day","Probiotic")) %>% 
   group_by(Predictor) %>% 
   mutate(P_adj = p.adjust(P, method=opts$p)) %>%
@@ -97,7 +90,6 @@ df_pcxday <- df_sig %>%
 
 ########################
 # plot the fixed effects
-
 combined <- list()
 
 for (i in df_pc$Model) {
@@ -121,7 +113,6 @@ for (i in df_pc$Model) {
 }
 
 # map to add q value to plot
-
 ann_sig <- df_sig %>%
   filter(!grepl(":", Predictor)) %>%
   mutate(pcn = Predictor) %>%
@@ -130,7 +121,6 @@ ann_sig <- df_sig %>%
 
 ######################
 # plot the interaction
-
 combined <- list()
 
 for (i in df_pcxday$Model) {
@@ -162,8 +152,9 @@ ann_sig <- df_sig %>%
   mutate(pcn = gsub("\\:.*", "", pcn)) %>%
   mutate(P_adj = paste0("q=", scientific(P_adj))) %>%
   select(MicroFeat, pcn, P_adj, Coefficient)
-pdf("./output/micro_toddler//interaction.pdf",10,10)
 
+
+pdf("./figures/Fig5b_toddler_interaction.pdf",10,10)
 ggplot(combined, aes(x=Day, y=.fitted)) +
   facet_wrap(~ MicroFeat + pcn, scales="free", ncol=5) +
   geom_smooth(aes(colour=factor(Quartile), fill=factor(Quartile)), method="lm") +
@@ -178,7 +169,7 @@ ggplot(combined, aes(x=Day, y=.fitted)) +
     legend.text = element_text(size=12.5),
     strip.text = element_text(size=8.75, face="bold"),
     legend.position = "top",
-  ) + #aspect.ratio=0.75
+  ) + 
   labs(title="Interaction effect(s)", 
        colour="PC Quartile",
        fill="PC Quartile",

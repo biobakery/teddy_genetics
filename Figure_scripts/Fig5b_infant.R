@@ -1,35 +1,25 @@
-#!/usr/bin/env Rscript
-require(docopt)
-'Usage:
-   plot_results.R [-m <microbiome> -g <genetics> -d <metadata> -i <input> -o <out_dir> -p <padj_method>]
-
-Options:
-   -m microbiome features
-   -g genetic features
-   -d sample metadata
-   -i input
-   -o output directory [default: out_dir]
-   -p method for p-value adjustment [default: bonferroni]
-
- ]' -> doc
-
-opts <- docopt(doc)
-
-#################
-# load the data #
-#################
-
 library(tidyverse)
 library(reshape2)
-setwd("~/ddong/TEDDY/")
+library(ggplot2)
+library(viridis)
+library(scales)
+library(lmerTest)
+
+setwd("~/ddong/TEDDY_project/")
+##--------------------------------------
+## Fig. 5b: Infant examples
+##--------------------------------------
+
+### Data loading
+opts <- list()
 opts$m <- "./output/microbiome_infant.txt"
-opts$g <- "./genetics.bed/filter/teddy_out8.qc.PCA_PC1-PC5.tsv"
+opts$g <- "./data/genetics.bed/filter/teddy_out8.qc.PCA_PC1-PC5.tsv"
 opts$d <- "./output/metadata_sample.txt"
 opts$i <- "./output/model_anova_total_infant.txt"
 opts$p <- 'bonferroni'
-opts$o <- "micro_infant"
-# microbiome data
+opts$o <- "./output/micro_infant"
 
+# microbiome data
 microbiome_melt <- read.csv(opts$m, sep="\t", header=T) %>%
   mutate(sample_id = factor(sample_id)) %>%
   melt() %>%
@@ -43,47 +33,30 @@ microbiome <- read.csv(opts$m, sep="\t", header=T) %>%
   mutate(value = log10(value + eps)) %>%
   dcast(sample_id ~ variable, value.var="value")
 
-microbiome[1:3,1:3]
-
 # genetics data
-
 snps <- read.csv(opts$g, sep="\t", header=T, check.names=F)
 colnames(snps)[1] <- "subject_id"
-# metadata
 
+# metadata
 metadata <- read.csv(opts$d, "\t", header=T)
 
 # merge data and metadata
-
 df_subjects <- merge(metadata, snps, by="subject_id")
-
 dat <- merge(df_subjects, microbiome, by="sample_id") %>%
   rename(Subject=subject_id, Day=Days) %>%
   mutate(Subject=factor(Subject))
+
 #############################################
 # visualisation of significant associations #
 #############################################
-
-library(dplyr)
-library(reshape2)
-library(ggplot2)
-library(viridis)
-library(scales)
-library(lmerTest)
-
 # input
-
 model_stats <- read.csv(opts$i, sep="\t", header=T)
 
-head(model_stats)
-
 # output directory
-
 dir.create(opts$o)
 
 ####################
 # p-value adjustment
-
 df_sig <- model_stats %>%filter(!Predictor %in% c("Country","Day","Probiotic")) %>% 
   group_by(Predictor) %>% 
   mutate(P_adj = p.adjust(P, method=opts$p)) %>%
@@ -107,7 +80,6 @@ df_sig2 <- df_sig %>% filter(Type == "genetics:time")
 
 ##############################################
 # line graphs for each significant association
-
 df_pc <- df_sig %>%
   filter(!grepl("\\:", Type))
 
@@ -116,7 +88,6 @@ df_pcxday <- df_sig %>%
 
 ########################
 # plot the fixed effects
-
 combined <- list()
 
 for (i in df_pc$Model) {
@@ -140,7 +111,6 @@ for (i in df_pc$Model) {
 }
 
 # map to add q value to plot
-
 ann_sig <- df_sig %>%
   filter(!grepl(":", Predictor)) %>%
   mutate(pcn = Predictor) %>%
@@ -150,7 +120,6 @@ ann_sig <- df_sig %>%
 
 ######################
 # plot the interaction
-
 combined <- list()
 
 for (i in df_pcxday$Model) {
@@ -184,7 +153,7 @@ ann_sig <- df_sig %>%
   select(MicroFeat, pcn, P_adj, Coefficient)
 
 
-pdf("./output/micro_infant/interaction.pdf",14,16)
+pdf("./figures/Fig5b_infant_interaction.pdf",14,16)
 interaction <- ggplot(combined, aes(x=Day, y=.fitted)) +
   facet_wrap(~ MicroFeat + pcn, scales="free", ncol=5) +
   geom_smooth(aes(colour=factor(Quartile), fill=factor(Quartile)), method="lm") +
@@ -199,7 +168,7 @@ interaction <- ggplot(combined, aes(x=Day, y=.fitted)) +
     legend.text = element_text(size=12.5),
     strip.text = element_text(size=8.75, face="bold"),
     legend.position = "top",
-  ) + #aspect.ratio=0.75
+  ) + 
   labs(title="Interaction effect(s)", 
        colour="PC Quartile",
        fill="PC Quartile",
@@ -208,4 +177,3 @@ interaction <- ggplot(combined, aes(x=Day, y=.fitted)) +
             hjust=1.5,
             vjust=1.5)
 dev.off()
-#ggsave(interaction, file=paste0("./", opts$o, "/interaction.png"), width=15, dpi=300)

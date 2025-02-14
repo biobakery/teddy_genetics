@@ -2,9 +2,16 @@ library(dplyr)
 library(data.table)
 library(stringr)
 library(ggside)
-setwd("~/ddong/TEDDY_old//")
+library(ggplot2)
+library(tidyverse)
+library(cowplot)
 
-####load data
+setwd("~/ddong/TEDDY_project/")
+##------------------------------------------------------------------------------------
+## Fig. 5a: Heatmap of genetic and microbiome associations (Linear mixed model results)
+##------------------------------------------------------------------------------------
+
+### Data loading
 load("./output/infant_species_all_nobrst.Rdata")
 load("./output/infant_species_all_brst.Rdata")
 load("./output/toddler_species_all.Rdata")
@@ -16,7 +23,7 @@ df_sig_Toddler <- df_sig_Toddler %>% group_by(Type) %>%
   mutate(P_adj_bon = p.adjust(P,method = "bonferroni"),
          P_adj  = p.adjust(P,method = "fdr"))
 
-##combine infant results
+###combine infant results
 col <- intersect(colnames(df_sig_Toddler),colnames(df_sig_infant_brst))
 all <- rbind(df_sig_infant_brst[,col],df_sig_infant_nobrst[,col],df_sig_Toddler[,col])
 all <- all %>% mutate(star = case_when(P_adj_bon < 0.001 ~ "***",
@@ -25,11 +32,11 @@ all <- all %>% mutate(star = case_when(P_adj_bon < 0.001 ~ "***",
 all <- all %>% mutate(species = str_extract(Model,"(?<=lmer\\().*(?=\\ \\~)"))
 all$species <- gsub("`","",all$species)
 
-##load tax pologentic information
+### load tax pologentic information
 tax <- fread("./output/species_major_tree.txt")
 all <- all %>% left_join(tax,by = c("species" = "species"))
 
-###keep the significant results
+### keep the significant results
 all <- all %>% mutate(paste= paste(Predictor,Class))
 sig <- all %>%filter(P_adj_bon< 0.05) 
 Species <- all %>%group_by(Type) %>%  filter(paste %in% sig$paste &
@@ -42,7 +49,7 @@ Species$classtype <- factor(Species$Class ,levels =  c("Infant Breastfeeding",
                                                        "toddler" ))
 Species$species <- factor(Species$species,levels = unique(Species$species))
 
-pdf("./figures/Fig5A.pdf",width = 4.5,6)
+pdf("./figures/Fig5a.pdf",width = 4.5,6)
 ggplot(data=Species, aes(y=species, x=Predictor, fill=value)) +
   geom_tile(colour="black") +
   facet_grid(~classtype, space="free", scales="free") +
@@ -77,4 +84,4 @@ ggplot(data=Species, aes(y=species, x=Predictor, fill=value)) +
   geom_ysidetile(aes(x = "phylum", yfill = phylum)) +
   labs(fill="sign(coef) * -log10(adj_pvalue)", x="", y="")
 dev.off()
-fwrite(all,file ="./output/linearmix_infant_toddler.txt",sep = '\t',quote = F,col.names = T)
+#fwrite(all,file ="./output/linearmix_infant_toddler.txt",sep = '\t',quote = F,col.names = T)
