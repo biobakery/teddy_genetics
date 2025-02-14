@@ -1,6 +1,7 @@
 # README for TEDDY Microbiome-Genetics Analysis
 
-This repository contains the code for the manuscript titled "Gut Microbiome Maturation in Early Childhood Interacts with Host Genetics to Predict Type 1 Diabetes Risk." The code includes analyses for calculating the relative risk of type 1 diabetes across different microbiome maturation patterns, as well as linear mixed models to study genetic and microbiome associations over time in the TEDDY study.
+This repository contains the code for the manuscript "Gut Microbiome Maturation in Early Childhood Interacts with Host Genetics to Predict Type 1 Diabetes Risk." The code covers analyses of microbiome maturation pattern clustering, comparisons of IA/T1D risk across clusters, and linear mixed models for genetic–microbiome associations over time in the TEDDY study.
+
 
 ## **1. Dependencies**
 R (version 4.2.3) with the following packages:
